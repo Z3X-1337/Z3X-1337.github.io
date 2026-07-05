@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Z3X defensive security operating model and portfolio methodology.">
+    <title>Systems | Z3X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="cyber-scene" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Z3X home">
+        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="">
+        <span><strong>Z3X</strong><small>Defensive Security Lab</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="systems.html">Systems</a>
+        <a href="projects.html">Projects</a>
+        <a href="stack.html">Stack</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-shell subpage">
+      <section class="page-hero">
+        <p class="eyebrow">Operating Model</p>
+        <h1>Security work should produce evidence that another analyst can trust.</h1>
+        <p class="lead">The portfolio is organized around safe, inspectable, defensive tooling. Every project favors clear input, deterministic behavior, readable output, and documented assumptions.</p>
+      </section>
+
+      <section class="timeline-grid">
+        <article class="process-card">
+          <span>01</span>
+          <h2>Scope First</h2>
+          <p>Tools are built for authorized analysis, sanitized examples, and defensive learning. Ambiguous or offensive use cases are kept out of the project surface.</p>
+        </article>
+        <article class="process-card">
+          <span>02</span>
+          <h2>Normalize Evidence</h2>
+          <p>Inputs are parsed into consistent structures so findings can be reviewed, exported, and compared without guesswork.</p>
+        </article>
+        <article class="process-card">
+          <span>03</span>
+          <h2>Explain Results</h2>
+          <p>Reports avoid vague labels. Findings include reason, category, risk signal, and recommended next action when useful.</p>
+        </article>
+        <article class="process-card">
+          <span>04</span>
+          <h2>Test the Contract</h2>
+          <p>Unit tests cover extraction, classification, thresholds, CLI behavior, and edge cases before the work is treated as finished.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
