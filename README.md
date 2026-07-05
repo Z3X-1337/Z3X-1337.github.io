@@ -6,6 +6,10 @@ Personal GitHub Pages portfolio for defensive cybersecurity projects.
 
 https://Z3X-1337.github.io
 
+## Design Direction
+
+The site uses a cyberpunk technical interface: dark background, neon cyan/magenta/lime accents, telemetry panels, project system cards, and a lightweight animated canvas scene.
+
 ## Scope
 
 The site highlights practical blue-team learning projects:
@@ -16,7 +20,8 @@ The site highlights practical blue-team learning projects:
 
 ## Quality Bar
 
-- Static, fast-loading HTML and CSS.
+- Static HTML, CSS, and JavaScript.
+- Lightweight canvas animation with no external runtime dependencies.
 - Responsive layout for desktop and mobile.
 - English-only professional content.
 - Links to documented, tested repositories.
