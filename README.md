@@ -1,14 +1,18 @@
 # Z3X Cybersecurity Portfolio
 
-Personal GitHub Pages portfolio for defensive cybersecurity projects.
+Multi-page GitHub Pages portfolio for defensive cybersecurity projects.
 
 ## Live Site
 
 https://Z3X-1337.github.io
 
-## Design Direction
+## Pages
 
-The site uses a cyberpunk technical interface: dark background, neon cyan/magenta/lime accents, telemetry panels, project system cards, and a lightweight animated canvas scene.
+- `index.html` - professional landing page and profile identity.
+- `systems.html` - operating model and defensive methodology.
+- `projects.html` - repository portfolio.
+- `stack.html` - engineering standards and technical stack.
+- `contact.html` - profile links and collaboration scope.
 
 ## Scope
 
@@ -20,9 +24,12 @@ The site highlights practical blue-team learning projects:
 
 ## Quality Bar
 
-- Static HTML, CSS, and JavaScript.
-- Lightweight canvas animation with no external runtime dependencies.
-- Responsive layout for desktop and mobile.
+- Cyberpunk technical visual direction with a professional layout.
+- Separate pages instead of one long scrolling page.
+- GitHub avatar integration.
+- Chakra Petch and JetBrains Mono typography.
+- Lightweight JavaScript canvas scene with no external runtime dependency.
+- Responsive desktop and mobile layouts.
 - English-only professional content.
 - Links to documented, tested repositories.
 
