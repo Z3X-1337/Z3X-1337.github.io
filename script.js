@@ -4,6 +4,7 @@
 
   const context = canvas.getContext("2d", { alpha: false });
   const pointer = { x: 0.5, y: 0.5 };
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let width = 0;
   let height = 0;
   let deviceRatio = 1;
@@ -19,23 +20,23 @@
     canvas.style.height = `${height}px`;
     context.setTransform(deviceRatio, 0, 0, deviceRatio, 0, 0);
 
-    const count = Math.max(42, Math.floor((width * height) / 25000));
+    const count = Math.max(38, Math.floor((width * height) / 30000));
     nodes = Array.from({ length: count }, (_, index) => ({
       x: (index * 97) % width,
       y: (index * 193) % height,
-      vx: ((index % 5) - 2) * 0.08,
-      vy: (((index + 2) % 5) - 2) * 0.08,
+      vx: ((index % 5) - 2) * 0.07,
+      vy: (((index + 2) % 5) - 2) * 0.07,
       phase: index * 0.37,
     }));
   }
 
   function drawGrid(time) {
     const horizon = height * 0.64;
-    context.strokeStyle = "rgba(34, 247, 255, 0.18)";
+    context.strokeStyle = "rgba(34, 247, 255, 0.17)";
     context.lineWidth = 1;
 
     for (let x = -width; x < width * 2; x += 72) {
-      const drift = (time * 0.03 + pointer.x * 20) % 72;
+      const drift = reducedMotion ? 0 : (time * 0.03 + pointer.x * 20) % 72;
       context.beginPath();
       context.moveTo(x + drift, horizon);
       context.lineTo((x - width / 2) * 2.2 + width / 2, height);
@@ -43,7 +44,7 @@
     }
 
     for (let i = 0; i < 16; i += 1) {
-      const offset = (time * 0.05 + i * 28) % 420;
+      const offset = reducedMotion ? 0 : (time * 0.05 + i * 28) % 420;
       const y = horizon + Math.pow(i / 15, 2.3) * (height - horizon) + offset * 0.12;
       context.beginPath();
       context.moveTo(0, y);
@@ -56,8 +57,10 @@
     context.lineWidth = 1;
 
     for (const node of nodes) {
-      node.x += node.vx + (pointer.x - 0.5) * 0.08;
-      node.y += node.vy + (pointer.y - 0.5) * 0.08;
+      if (!reducedMotion) {
+        node.x += node.vx + (pointer.x - 0.5) * 0.08;
+        node.y += node.vy + (pointer.y - 0.5) * 0.08;
+      }
 
       if (node.x < -20) node.x = width + 20;
       if (node.x > width + 20) node.x = -20;
@@ -71,7 +74,7 @@
         const b = nodes[j];
         const distance = Math.hypot(a.x - b.x, a.y - b.y);
         if (distance < 145) {
-          const alpha = (1 - distance / 145) * 0.26;
+          const alpha = (1 - distance / 145) * 0.24;
           context.strokeStyle = `rgba(255, 43, 214, ${alpha})`;
           context.beginPath();
           context.moveTo(a.x, a.y);
@@ -82,7 +85,7 @@
     }
 
     for (const node of nodes) {
-      const pulse = 0.55 + Math.sin(time * 0.002 + node.phase) * 0.45;
+      const pulse = reducedMotion ? 0.7 : 0.55 + Math.sin(time * 0.002 + node.phase) * 0.45;
       context.fillStyle = `rgba(34, 247, 255, ${0.28 + pulse * 0.44})`;
       context.fillRect(node.x - 1.5, node.y - 1.5, 3, 3);
     }
@@ -102,7 +105,9 @@
     drawGrid(time);
     drawNodes(time);
 
-    requestAnimationFrame(frame);
+    if (!reducedMotion) {
+      requestAnimationFrame(frame);
+    }
   }
 
   window.addEventListener("resize", resize);
