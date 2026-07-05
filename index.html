@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cybersecurity portfolio for Z3X. Defensive tooling, SOC learning, log analysis, and web security projects.">
+    <title>Z3X | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">Z</span>
+        <span>Z3X</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#arabic">Arabic</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="scan-line"></div>
+          <div class="terminal-window">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <pre>def analyze(logs):
+    signals = extract_events(logs)
+    alerts = correlate(signals)
+    return explain(alerts)</pre>
+          </div>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Blue-Team | SOC | Defensive Security</p>
+          <h1 id="hero-title">Z3X</h1>
+          <p class="hero-copy">
+            Cybersecurity learner building defensive Python tools for IOC handling,
+            SOC-style log analysis, and practical web security checks.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/Z3X-1337">GitHub</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn</a>
+            <a class="button secondary" href="#projects">View Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" aria-label="Profile summary">
+        <div>
+          <p class="section-kicker">Mission</p>
+          <h2>Build safe, clear, and testable security tools.</h2>
+        </div>
+        <p>
+          This portfolio focuses on defensive security work: small tools,
+          documented assumptions, sanitized sample data, SOC fundamentals, and practical detection logic.
+        </p>
+      </section>
+
+      <section class="section arabic-summary" id="arabic" lang="ar" dir="rtl" aria-labelledby="arabic-title">
+        <div>
+          <p class="section-kicker">نبذة عربية</p>
+          <h2 id="arabic-title">أبني مشاريع دفاعية منظمة في الأمن السيبراني.</h2>
+        </div>
+        <p>
+          أركز على Blue Team و SOC وتحليل السجلات وأدوات Python البسيطة التي تساعد على فهم المؤشرات الأمنية
+          واكتشاف الأنماط المشبوهة بشكل قانوني وآمن.
+        </p>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="section-kicker">Work</p>
+          <h2 id="projects-title">Featured Projects</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-icon">IO</div>
+            <h3>IOC Sanitizer</h3>
+            <p>Extracts, defangs, and refangs indicators of compromise for safe incident reporting.</p>
+            <ul>
+              <li>Python standard library</li>
+              <li>Regex-based IOC extraction</li>
+              <li>Unit-tested behavior</li>
+            </ul>
+            <a href="https://github.com/Z3X-1337/ioc-sanitizer">Open repository</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">AL</div>
+            <h3>Auth Log Analyzer</h3>
+            <p>Parses SSH-style authentication logs and flags repeated failed login attempts.</p>
+            <ul>
+              <li>Log parsing</li>
+              <li>Suspicious IP scoring</li>
+              <li>Sanitized sample logs</li>
+            </ul>
+            <a href="https://github.com/Z3X-1337/auth-log-analyzer">Open repository</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">SH</div>
+            <h3>Security Header Auditor</h3>
+            <p>Checks authorized websites for common HTTP security headers and reports coverage.</p>
+            <ul>
+              <li>HTTP fundamentals</li>
+              <li>Web security hygiene</li>
+              <li>Clear JSON output</li>
+            </ul>
+            <a href="https://github.com/Z3X-1337/security-header-auditor">Open repository</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="section-kicker">Capabilities</p>
+          <h2 id="skills-title">Security Skills</h2>
+        </div>
+        <div class="skill-list">
+          <span>Python Automation</span>
+          <span>IOC Handling</span>
+          <span>Log Analysis</span>
+          <span>SOC Fundamentals</span>
+          <span>Detection Logic</span>
+          <span>Web Security Basics</span>
+          <span>Incident Notes</span>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">Open to learning, labs, and defensive security projects.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="https://github.com/Z3X-1337">GitHub Profile</a>
+          <a class="button secondary light" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
