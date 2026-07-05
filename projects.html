@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Z3X cybersecurity projects: IOC Sanitizer, Auth Log Analyzer, and Security Header Auditor.">
+    <title>Projects | Z3X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="cyber-scene" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Z3X home">
+        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="">
+        <span><strong>Z3X</strong><small>Defensive Security Lab</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="systems.html">Systems</a>
+        <a aria-current="page" href="projects.html">Projects</a>
+        <a href="stack.html">Stack</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-shell subpage">
+      <section class="page-hero compact">
+        <p class="eyebrow">Repository Deck</p>
+        <h1>Small tools, clean boundaries, and proof through tests.</h1>
+        <p class="lead">Each repository is intentionally focused. The goal is not a noisy demo; the goal is a trustworthy defensive workflow that can be read, run, and reviewed.</p>
+      </section>
+
+      <section class="project-list">
+        <article class="project-detail cyan">
+          <div class="project-index">IOC</div>
+          <div class="project-body">
+            <p class="terminal-label">safe reporting utility</p>
+            <h2>IOC Sanitizer</h2>
+            <p>Extracts, classifies, defangs, and refangs indicators such as URLs, domains, IP addresses, emails, and hashes for safe sharing.</p>
+            <ul class="quality-list">
+              <li>Structured JSON and readable text output</li>
+              <li>Duplicate-aware extraction</li>
+              <li>Safe analyst reporting workflow</li>
+            </ul>
+            <a class="button primary" href="https://github.com/Z3X-1337/ioc-sanitizer">Open Repository</a>
+          </div>
+        </article>
+
+        <article class="project-detail magenta">
+          <div class="project-index">LOG</div>
+          <div class="project-body">
+            <p class="terminal-label">authentication signal analysis</p>
+            <h2>Auth Log Analyzer</h2>
+            <p>Parses SSH-style authentication logs and highlights repeated failures, password spray patterns, accepted logins, and account targeting.</p>
+            <ul class="quality-list">
+              <li>Risk scoring by source IP</li>
+              <li>Configurable failure thresholds</li>
+              <li>Evidence-focused summaries</li>
+            </ul>
+            <a class="button secondary" href="https://github.com/Z3X-1337/auth-log-analyzer">Open Repository</a>
+          </div>
+        </article>
+
+        <article class="project-detail lime">
+          <div class="project-index">WEB</div>
+          <div class="project-body">
+            <p class="terminal-label">authorized web check</p>
+            <h2>Security Header Auditor</h2>
+            <p>Checks common HTTP security headers for authorized targets and reports strong, weak, review, and missing states with recommendations.</p>
+            <ul class="quality-list">
+              <li>Header-aware recommendations</li>
+              <li>Clear defensive authorization scope</li>
+              <li>CLI and tests included</li>
+            </ul>
+            <a class="button ghost" href="https://github.com/Z3X-1337/security-header-auditor">Open Repository</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
