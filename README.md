@@ -1,15 +1,26 @@
-# Z3X-1337.github.io
+# Z3X Cybersecurity Portfolio
 
-Personal cybersecurity portfolio site for GitHub Pages.
+Personal GitHub Pages portfolio for defensive cybersecurity projects.
 
 ## Live Site
 
 https://Z3X-1337.github.io
 
-## About
+## Scope
 
-This site presents Z3X's defensive cybersecurity portfolio, including SOC learning, blue-team Python tools, log analysis, and web security basics.
+The site highlights practical blue-team learning projects:
+
+- IOC Sanitizer
+- Auth Log Analyzer
+- Security Header Auditor
+
+## Quality Bar
+
+- Static, fast-loading HTML and CSS.
+- Responsive layout for desktop and mobile.
+- English-only professional content.
+- Links to documented, tested repositories.
 
 ## Safety
 
-Only sanitized project samples are published. Do not upload real secrets, tokens, credentials, private logs, or customer data.
+Only sanitized samples are published. The portfolio does not include real secrets, credentials, private logs, or customer data.
