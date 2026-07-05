@@ -3,156 +3,166 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Z3X cybersecurity portfolio: defensive Python tools, SOC learning, IOC handling, log analysis, and web security checks.">
+    <meta name="description" content="Z3X cybersecurity portfolio: cyberpunk defensive security portfolio for SOC learning, Python tooling, IOC handling, and web security checks.">
     <title>Z3X | Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <canvas id="cyber-scene" aria-hidden="true"></canvas>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Z3X portfolio home">
-        <span class="brand-mark">Z</span>
-        <span>Z3X</span>
+        <span class="brand-mark">Z3X</span>
+        <span class="brand-text">Defensive Security Lab</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
         <a href="#projects">Projects</a>
-        <a href="#quality">Quality</a>
+        <a href="#stack">Stack</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-visual" aria-hidden="true">
-          <div class="signal-grid"></div>
-          <div class="terminal-window">
-            <div class="terminal-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <pre>event_stream
-  | parse_auth()
-  | extract_iocs()
-  | score_risk()
-  | explain_findings()</pre>
-          </div>
-        </div>
-        <div class="hero-content">
-          <p class="eyebrow">Blue Team | SOC Fundamentals | Defensive Python</p>
-          <h1 id="hero-title">Cybersecurity tools built for clarity and evidence.</h1>
+        <div class="hero-panel">
+          <p class="eyebrow">SOC Fundamentals / Blue Team Automation / Evidence-Driven Security</p>
+          <h1 id="hero-title">Z3X builds defensive tools with signal, precision, and proof.</h1>
           <p class="hero-copy">
-            I build small, practical security utilities for IOC handling, authentication log analysis,
-            and authorized web security checks. Each project is documented, tested, and safe to inspect.
+            A cyberpunk-styled portfolio for practical security engineering: IOC handling,
+            SSH authentication log analysis, and authorized web security checks built with
+            readable Python, structured outputs, tests, and CI.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://github.com/Z3X-1337">GitHub</a>
+            <a class="button primary" href="https://github.com/Z3X-1337">GitHub Profile</a>
             <a class="button secondary" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn</a>
-            <a class="button secondary" href="#projects">Projects</a>
+            <a class="button ghost" href="#projects">View Projects</a>
           </div>
         </div>
+
+        <aside class="ops-console" aria-label="Portfolio status console">
+          <div class="console-topline">
+            <span class="console-dot"></span>
+            <span>portfolio telemetry</span>
+            <span class="console-status">online</span>
+          </div>
+          <div class="console-grid">
+            <div>
+              <strong>3</strong>
+              <span>tools shipped</span>
+            </div>
+            <div>
+              <strong>23</strong>
+              <span>local tests</span>
+            </div>
+            <div>
+              <strong>CI</strong>
+              <span>GitHub Actions</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>runtime deps</span>
+            </div>
+          </div>
+          <pre class="console-code">pipeline:
+  ingest -> normalize -> score
+  report -> test -> ship</pre>
+        </aside>
       </section>
 
-      <section class="section metrics" aria-label="Portfolio highlights">
-        <div>
-          <strong>3</strong>
-          <span>Defensive tools</span>
-        </div>
-        <div>
-          <strong>100%</strong>
-          <span>Sanitized samples</span>
-        </div>
-        <div>
-          <strong>CI</strong>
-          <span>Automated test workflow</span>
-        </div>
-        <div>
-          <strong>0</strong>
-          <span>External runtime dependencies</span>
+      <section class="section systems" id="systems" aria-labelledby="systems-title">
+        <div class="section-label">Operating Model</div>
+        <div class="split">
+          <h2 id="systems-title">Purpose-built tools for clean defensive workflows.</h2>
+          <p>
+            Every repository is intentionally small, inspectable, documented, and safe to run.
+            The work focuses on producing clear evidence, not noise: sanitized samples, JSON
+            output, deterministic tests, and explicit defensive scope.
+          </p>
         </div>
       </section>
 
-      <section class="section split" id="work" aria-labelledby="work-title">
-        <div>
-          <p class="section-kicker">Focus</p>
-          <h2 id="work-title">Defensive security projects with clear outputs.</h2>
-        </div>
-        <p>
-          The portfolio is structured around practical blue-team learning: extracting useful indicators,
-          reviewing authentication evidence, and checking basic web security posture on authorized targets.
-          The goal is not noisy scanning. The goal is repeatable, explainable, and safe security automation.
-        </p>
-      </section>
-
-      <section class="section" id="projects" aria-labelledby="projects-title">
+      <section class="section project-section" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
-          <p class="section-kicker">Projects</p>
-          <h2 id="projects-title">Featured repositories</h2>
+          <div class="section-label">Repositories</div>
+          <h2 id="projects-title">Field-ready learning projects.</h2>
         </div>
+
         <div class="project-grid">
-          <article class="project-card">
-            <div class="project-icon">IOC</div>
+          <article class="project-card accent-cyan">
+            <div class="project-header">
+              <span class="project-code">IOC</span>
+              <span class="project-state">tested</span>
+            </div>
             <h3>IOC Sanitizer</h3>
-            <p>Extracts, classifies, defangs, and refangs URLs, domains, IP addresses, emails, and hashes.</p>
+            <p>Extracts, classifies, defangs, and refangs URLs, domains, IP addresses, emails, and hashes for safe reporting.</p>
             <ul>
-              <li>Structured JSON output</li>
+              <li>Structured JSON and text output</li>
+              <li>Duplicate-aware extraction</li>
               <li>Safe sharing workflow</li>
-              <li>Detailed unit tests</li>
             </ul>
             <a href="https://github.com/Z3X-1337/ioc-sanitizer">Open repository</a>
           </article>
 
-          <article class="project-card">
-            <div class="project-icon">LOG</div>
+          <article class="project-card accent-magenta">
+            <div class="project-header">
+              <span class="project-code">LOG</span>
+              <span class="project-state">tested</span>
+            </div>
             <h3>Auth Log Analyzer</h3>
-            <p>Parses SSH-style authentication logs and highlights brute-force behavior and account targeting.</p>
+            <p>Parses SSH-style authentication logs and highlights repeated failures, password spray patterns, and account targeting.</p>
             <ul>
-              <li>Detection thresholds</li>
-              <li>Risk summary reports</li>
-              <li>Sanitized sample logs</li>
+              <li>Risk scoring by source IP</li>
+              <li>Accepted login context</li>
+              <li>Configurable thresholds</li>
             </ul>
             <a href="https://github.com/Z3X-1337/auth-log-analyzer">Open repository</a>
           </article>
 
-          <article class="project-card">
-            <div class="project-icon">WEB</div>
+          <article class="project-card accent-lime">
+            <div class="project-header">
+              <span class="project-code">WEB</span>
+              <span class="project-state">tested</span>
+            </div>
             <h3>Security Header Auditor</h3>
-            <p>Checks common HTTP security headers and returns a clear score for authorized websites.</p>
+            <p>Checks common HTTP security headers for authorized websites and reports strong, weak, review, and missing states.</p>
             <ul>
-              <li>Header policy checks</li>
-              <li>Human-readable findings</li>
-              <li>Safe usage guidance</li>
+              <li>Policy-aware findings</li>
+              <li>Recommendation per header</li>
+              <li>Authorization-first scope</li>
             </ul>
             <a href="https://github.com/Z3X-1337/security-header-auditor">Open repository</a>
           </article>
         </div>
       </section>
 
-      <section class="section split quality" id="quality" aria-labelledby="quality-title">
-        <div>
-          <p class="section-kicker">Quality</p>
-          <h2 id="quality-title">Built to be reviewed, tested, and improved.</h2>
-        </div>
-        <div class="quality-list">
+      <section class="section stack" id="stack" aria-labelledby="stack-title">
+        <div class="section-label">Engineering Standard</div>
+        <h2 id="stack-title">Quality controls are part of the design.</h2>
+        <div class="stack-grid">
           <span>Typed Python</span>
-          <span>Unit tests</span>
+          <span>Unit Tests</span>
           <span>GitHub Actions</span>
-          <span>Sanitized sample data</span>
-          <span>Clear CLI usage</span>
-          <span>Defensive scope</span>
+          <span>Sanitized Samples</span>
+          <span>Structured JSON</span>
+          <span>Defensive Scope</span>
+          <span>CLI Workflows</span>
+          <span>Clear Documentation</span>
         </div>
       </section>
 
       <section class="section contact-section" id="contact" aria-labelledby="contact-title">
         <div>
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">Open to learning, labs, and defensive cybersecurity projects.</h2>
+          <div class="section-label">Contact</div>
+          <h2 id="contact-title">Open to labs, learning, and defensive cybersecurity projects.</h2>
         </div>
         <div class="contact-actions">
-          <a class="button primary dark" href="https://github.com/Z3X-1337">GitHub Profile</a>
-          <a class="button secondary light" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn</a>
+          <a class="button primary" href="https://github.com/Z3X-1337">GitHub</a>
+          <a class="button secondary dark" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn</a>
         </div>
       </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
