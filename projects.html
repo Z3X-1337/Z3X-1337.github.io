@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Defensive cybersecurity projects by Zaid Hijazi: authentication log analysis, IOC sanitization, and HTTP security-header review.">
+  <meta name="description" content="Defensive cybersecurity projects by Zaid Hijazi: SOC case workflows, authentication-log analysis, IOC sanitization, and HTTP security-header review.">
   <meta name="theme-color" content="#0b1220">
   <title>Projects | Zaid Hijazi</title>
   <link rel="stylesheet" href="styles.css">
@@ -18,15 +18,29 @@
   <main id="content" class="shell page-main">
     <section class="page-intro">
       <p class="kicker">Repository review</p>
-      <h1>Small defensive tools with honest maturity labels.</h1>
-      <p class="lead">Each project is an installable <code>v0.1.0</code> CLI with tests, CI installation checks, MIT licensing, a changelog, and a documented engineering roadmap.</p>
+      <h1>Defensive tools with explicit evidence and maturity boundaries.</h1>
+      <p class="lead">The portfolio contains one integrated SOC workflow and three focused utilities. Every repository is an installable <code>v0.1.0</code> CLI with tests, CI installation checks, MIT licensing, a changelog, and a documented roadmap.</p>
     </section>
 
     <section class="case-list">
       <article class="case-card">
         <div class="case-number">01</div>
         <div class="case-content">
-          <div class="card-top"><span class="status active">Keep and expand</span><span>Highest portfolio value</span></div>
+          <div class="card-top"><span class="status active">Primary project</span><span>Integrated SOC workflow</span></div>
+          <h2>SOC CaseForge</h2>
+          <p>Turns sanitized analyst evidence into a structured local case with a timeline, indicators, explainable findings, and reviewable reports.</p>
+          <div class="case-columns">
+            <div><h3>Evidence today</h3><ul><li>Installable <code>soc-caseforge</code> CLI</li><li>SQLite-backed cases and normalized events</li><li>OpenSSH ingestion, IOC extraction, and deterministic findings</li><li>JSON/Markdown reports and 24 tests across Python 3.10–3.12</li></ul></div>
+            <div><h3>Next engineering stage</h3><ul><li>ISO-8601 timestamp and timezone normalization</li><li>CSV and generic JSON event adapters</li><li>Case notes, dispositions, and analyst decisions</li><li>Evidence manifests, suppressions, and false-positive datasets</li></ul></div>
+          </div>
+          <a class="text-link" href="https://github.com/Z3X-1337/soc-caseforge">Open repository →</a>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-number">02</div>
+        <div class="case-content">
+          <div class="card-top"><span class="status">Focused detection utility</span><span>Authentication telemetry</span></div>
           <h2>Auth Log Analyzer</h2>
           <p>Analyzes supported OpenSSH authentication logs and reports suspicious source behavior using configurable failure and password-spray thresholds.</p>
           <div class="case-columns">
@@ -38,9 +52,9 @@
       </article>
 
       <article class="case-card">
-        <div class="case-number">02</div>
+        <div class="case-number">03</div>
         <div class="case-content">
-          <div class="card-top"><span class="status">Keep as supporting utility</span><span>Reusable component</span></div>
+          <div class="card-top"><span class="status">Supporting utility</span><span>Reusable IOC component</span></div>
           <h2>IOC Sanitizer</h2>
           <p>Extracts, validates, normalizes, defangs, and refangs indicators for safer sharing in tickets, reports, and analyst notes.</p>
           <div class="case-columns">
@@ -52,9 +66,9 @@
       </article>
 
       <article class="case-card">
-        <div class="case-number">03</div>
+        <div class="case-number">04</div>
         <div class="case-content">
-          <div class="card-top"><span class="status">Keep, narrow positioning</span><span>Secondary portfolio item</span></div>
+          <div class="card-top"><span class="status">Secondary utility</span><span>Authorized web-security checks</span></div>
           <h2>Security Header Auditor</h2>
           <p>Reviews selected HTTP response security headers for authorized websites and supports deterministic CI quality gates.</p>
           <div class="case-columns">
