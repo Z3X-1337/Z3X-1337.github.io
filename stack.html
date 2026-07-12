@@ -1,48 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Z3X technical stack and quality standards for cybersecurity portfolio projects.">
-    <title>Stack | Z3X</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <canvas id="cyber-scene" aria-hidden="true"></canvas>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Z3X home">
-        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="">
-        <span><strong>Z3X</strong><small>Defensive Security Lab</small></span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="systems.html">Systems</a>
-        <a href="projects.html">Projects</a>
-        <a aria-current="page" href="stack.html">Stack</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-
-    <main class="page-shell subpage">
-      <section class="page-hero compact">
-        <p class="eyebrow">Engineering Standard</p>
-        <h1>Professional presentation only matters when the repositories can back it up.</h1>
-        <p class="lead">The site is designed to show both visual identity and engineering discipline: readable code, safe examples, tests, CI, and clear project scope.</p>
-      </section>
-
-      <section class="stack-matrix" aria-label="Technical stack">
-        <article><span>01</span><strong>Python CLI</strong><p>Focused command-line tools with simple usage and predictable behavior.</p></article>
-        <article><span>02</span><strong>Unit Tests</strong><p>Tests validate parsing, scoring, output formats, and edge behavior.</p></article>
-        <article><span>03</span><strong>GitHub Actions</strong><p>CI workflows make quality checks visible in the repository.</p></article>
-        <article><span>04</span><strong>JSON Output</strong><p>Structured output supports automation, reporting, and repeatable review.</p></article>
-        <article><span>05</span><strong>Sanitized Samples</strong><p>Examples avoid secrets, private logs, and real customer data.</p></article>
-        <article><span>06</span><strong>Defensive Scope</strong><p>Project documentation states safe use cases and authorized boundaries.</p></article>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical skills and current learning priorities of Zaid Hijazi in Blue Team, SOC, Python, and defensive security automation.">
+  <meta name="theme-color" content="#0b1220"><title>Skills | Zaid Hijazi</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">ZH</span><span><strong>Zaid Hijazi</strong><small>Blue Team · SOC · Security Automation</small></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="site-nav"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="systems.html">Approach</a><a aria-current="page" href="stack.html">Skills</a><a href="contact.html">Contact</a></nav></header>
+  <main id="content" class="shell page-main">
+    <section class="page-intro"><p class="kicker">Capabilities and priorities</p><h1>A focused stack for defensive analysis and automation.</h1><p class="lead">The categories below distinguish demonstrated repository work from areas currently being developed.</p></section>
+    <section class="skills-layout">
+      <div class="skill-group"><p class="label">Demonstrated in public repositories</p><h2>Engineering</h2><ul class="tag-list"><li>Python</li><li>CLI design</li><li>Regular expressions</li><li>Dataclasses</li><li>JSON output</li><li>Unit testing</li><li>GitHub Actions</li><li>Safe sample design</li></ul></div>
+      <div class="skill-group"><p class="label">Current defensive focus</p><h2>Blue Team</h2><ul class="tag-list"><li>SOC triage</li><li>Authentication telemetry</li><li>IOC handling</li><li>Detection thresholds</li><li>Incident reporting</li><li>Threat-hunting fundamentals</li></ul></div>
+      <div class="skill-group"><p class="label">Next depth areas</p><h2>Development roadmap</h2><ul class="roadmap-list"><li><strong>SIEM workflows:</strong> practical query and investigation patterns.</li><li><strong>Detection engineering:</strong> reproducible test data and false-positive analysis.</li><li><strong>Threat hunting:</strong> hypothesis formation, data requirements, and evidence chains.</li><li><strong>Packaging:</strong> installable tools, versioned releases, and stronger documentation.</li></ul></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer><script src="script.js"></script>
+</body>
 </html>
