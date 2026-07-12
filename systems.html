@@ -1,62 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Z3X defensive security operating model and portfolio methodology.">
-    <title>Systems | Z3X</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <canvas id="cyber-scene" aria-hidden="true"></canvas>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Z3X home">
-        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="">
-        <span><strong>Z3X</strong><small>Defensive Security Lab</small></span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a aria-current="page" href="systems.html">Systems</a>
-        <a href="projects.html">Projects</a>
-        <a href="stack.html">Stack</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-
-    <main class="page-shell subpage">
-      <section class="page-hero">
-        <p class="eyebrow">Operating Model</p>
-        <h1>Security work should produce evidence that another analyst can trust.</h1>
-        <p class="lead">The portfolio is organized around safe, inspectable, defensive tooling. Every project favors clear input, deterministic behavior, readable output, and documented assumptions.</p>
-      </section>
-
-      <section class="timeline-grid">
-        <article class="process-card">
-          <span>01</span>
-          <h2>Scope First</h2>
-          <p>Tools are built for authorized analysis, sanitized examples, and defensive learning. Ambiguous or offensive use cases are kept out of the project surface.</p>
-        </article>
-        <article class="process-card">
-          <span>02</span>
-          <h2>Normalize Evidence</h2>
-          <p>Inputs are parsed into consistent structures so findings can be reviewed, exported, and compared without guesswork.</p>
-        </article>
-        <article class="process-card">
-          <span>03</span>
-          <h2>Explain Results</h2>
-          <p>Reports avoid vague labels. Findings include reason, category, risk signal, and recommended next action when useful.</p>
-        </article>
-        <article class="process-card">
-          <span>04</span>
-          <h2>Test the Contract</h2>
-          <p>Unit tests cover extraction, classification, thresholds, CLI behavior, and edge cases before the work is treated as finished.</p>
-        </article>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zaid Hijazi's approach to defensive security engineering: scope, evidence, detection rationale, testing, and reporting.">
+  <meta name="theme-color" content="#0b1220"><title>Approach | Zaid Hijazi</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">ZH</span><span><strong>Zaid Hijazi</strong><small>Blue Team · SOC · Security Automation</small></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="site-nav"><a href="index.html">Home</a><a href="projects.html">Projects</a><a aria-current="page" href="systems.html">Approach</a><a href="stack.html">Skills</a><a href="contact.html">Contact</a></nav></header>
+  <main id="content" class="shell page-main">
+    <section class="page-intro"><p class="kicker">Engineering approach</p><h1>Start with evidence. End with an explainable decision.</h1><p class="lead">My portfolio follows a defensive workflow that prioritizes reproducibility over visual complexity or unsupported claims.</p></section>
+    <section class="principle-grid">
+      <article><span>01</span><h2>Define scope</h2><p>State the authorized use case, supported input, and explicit limitations before implementing detection logic.</p></article>
+      <article><span>02</span><h2>Normalize evidence</h2><p>Convert raw text and events into stable structures that can be tested, counted, filtered, and exported.</p></article>
+      <article><span>03</span><h2>Explain the signal</h2><p>A finding should expose the threshold, observation, or policy that caused it—rather than returning an unexplained severity.</p></article>
+      <article><span>04</span><h2>Test behavior</h2><p>Validate parsing, edge cases, output contracts, and command-line behavior across supported Python versions.</p></article>
+      <article><span>05</span><h2>Report limitations</h2><p>Detections are hypotheses for analyst review. Documentation should identify false-positive conditions and missing context.</p></article>
+      <article><span>06</span><h2>Iterate from use</h2><p>Expand coverage only after the current workflow is reliable, understandable, and useful to a real analyst task.</p></article>
+    </section>
+  </main>
+  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer><script src="script.js"></script>
+</body>
 </html>

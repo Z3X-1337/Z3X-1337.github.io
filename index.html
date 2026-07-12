@@ -1,98 +1,99 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Z3X defensive cybersecurity portfolio: SOC learning, blue-team tooling, tested Python utilities, and security engineering workflows.">
-    <title>Z3X | Defensive Security Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <canvas id="cyber-scene" aria-hidden="true"></canvas>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Z3X home">
-        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="">
-        <span>
-          <strong>Z3X</strong>
-          <small>Defensive Security Lab</small>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a aria-current="page" href="index.html">Home</a>
-        <a href="systems.html">Systems</a>
-        <a href="projects.html">Projects</a>
-        <a href="stack.html">Stack</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zaid Hijazi — final-year cybersecurity student focused on Blue Team, SOC operations, threat hunting, and Python security automation.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Zaid Hijazi | Blue Team & SOC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zaid Hijazi home">
+      <span class="brand-mark">ZH</span>
+      <span><strong>Zaid Hijazi</strong><small>Blue Team · SOC · Security Automation</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+      <a aria-current="page" href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="systems.html">Approach</a>
+      <a href="stack.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <main>
-      <section class="hero page-shell">
-        <div class="hero-copy">
-          <p class="eyebrow">SOC / Blue Team / Python Security Tooling</p>
-          <h1>Z3X builds defensive security tools with proof, signal, and discipline.</h1>
-          <p class="lead">
-            A multi-page cybersecurity portfolio for practical security engineering:
-            IOC handling, authentication log analysis, authorized web checks, tested
-            command-line tools, and clean documentation.
-          </p>
-          <div class="button-row">
-            <a class="button primary" href="projects.html">Explore Projects</a>
-            <a class="button secondary" href="systems.html">View Methodology</a>
-          </div>
+  <main id="content">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="kicker">Final-year Cybersecurity Student</p>
+        <h1>Building practical defensive-security tools for analysts.</h1>
+        <p class="lead">I focus on SOC workflows, authentication telemetry, IOC handling, threat-hunting fundamentals, and small Python tools that produce explainable, testable results.</p>
+        <div class="actions">
+          <a class="button primary" href="projects.html">Review projects</a>
+          <a class="button secondary" href="https://github.com/Z3X-1337">GitHub profile</a>
         </div>
-
-        <aside class="identity-panel" aria-label="Z3X profile summary">
-          <div class="avatar-ring">
-            <img src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="Z3X avatar">
-          </div>
-          <div class="identity-meta">
-            <p class="terminal-label">operator</p>
-            <h2>Z3X-1337</h2>
-            <p>Cybersecurity learner focused on defensive engineering, SOC workflows, and trustworthy blue-team automation.</p>
-          </div>
-          <div class="signal-grid">
-            <div><strong>3</strong><span>public tools</span></div>
-            <div><strong>23</strong><span>local tests</span></div>
-            <div><strong>CI</strong><span>actions ready</span></div>
-            <div><strong>0</strong><span>runtime deps</span></div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="page-shell feature-band">
+        <ul class="proof-list" aria-label="Portfolio evidence">
+          <li><strong>3</strong><span>public defensive tools</span></li>
+          <li><strong>20</strong><span>unit and CLI tests</span></li>
+          <li><strong>3.10–3.12</strong><span>Python CI matrix</span></li>
+        </ul>
+      </div>
+      <aside class="profile-card">
+        <img src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="Zaid Hijazi GitHub profile image">
         <div>
-          <p class="section-kicker">Navigation Model</p>
-          <h2>Structured like a real engineering portfolio, not a single scrolling poster.</h2>
+          <p class="label">Current direction</p>
+          <h2>SOC entry path → Threat Hunting</h2>
+          <p>Developing stronger detection logic, evidence-driven reporting, and reusable defensive automation.</p>
         </div>
-        <div class="route-grid">
-          <a class="route-card" href="systems.html">
-            <span>01</span>
-            <strong>Systems</strong>
-            <p>Scope, operating model, validation habits, and defensive boundaries.</p>
-          </a>
-          <a class="route-card" href="projects.html">
-            <span>02</span>
-            <strong>Projects</strong>
-            <p>Three focused repositories with tests, documentation, and safe samples.</p>
-          </a>
-          <a class="route-card" href="stack.html">
-            <span>03</span>
-            <strong>Stack</strong>
-            <p>Python, CLI design, JSON output, CI, and repository quality controls.</p>
-          </a>
-          <a class="route-card" href="contact.html">
-            <span>04</span>
-            <strong>Contact</strong>
-            <p>GitHub, LinkedIn, collaboration scope, and professional profile links.</p>
-          </a>
-        </div>
-      </section>
-    </main>
+      </aside>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="section shell">
+      <div class="section-heading">
+        <p class="kicker">Selected work</p>
+        <h2>Projects backed by code, tests, and explicit scope.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="card-top"><span class="status active">Primary project</span><span>Python</span></div>
+          <h3>Auth Log Analyzer</h3>
+          <p>Parses OpenSSH authentication events and surfaces repeated failures, password-spray patterns, accepted logins, and suspicious source activity.</p>
+          <ul><li>Configurable thresholds</li><li>Structured JSON reports</li><li>7 unit and CLI tests</li></ul>
+          <a href="https://github.com/Z3X-1337/auth-log-analyzer">View repository <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="project-card">
+          <div class="card-top"><span class="status">Supporting tool</span><span>Python</span></div>
+          <h3>IOC Sanitizer</h3>
+          <p>Extracts common indicators and creates safe-to-share defanged representations for reports and analyst communication.</p>
+          <ul><li>URL, domain, IP, email, hashes</li><li>Grouped JSON and text output</li><li>6 unit and CLI tests</li></ul>
+          <a href="https://github.com/Z3X-1337/ioc-sanitizer">View repository <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="project-card">
+          <div class="card-top"><span class="status">Secondary project</span><span>Python</span></div>
+          <h3>Security Header Auditor</h3>
+          <p>Reviews common HTTP security headers for systems that are owned or explicitly authorized for assessment.</p>
+          <ul><li>Policy-aware recommendations</li><li>Deterministic scoring</li><li>7 unit and CLI tests</li></ul>
+          <a href="https://github.com/Z3X-1337/security-header-auditor">View repository <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell split">
+      <div>
+        <p class="kicker">Professional target</p>
+        <h2>Blue Team work that can be reviewed and trusted.</h2>
+      </div>
+      <div class="prose">
+        <p>My current goal is an entry-level SOC role. I am building the technical foundation for threat hunting through log analysis, detection reasoning, enrichment, and clear incident documentation.</p>
+        <p>The repositories are intentionally small today. The next stage is deeper data coverage, stronger detection validation, packaging, and analyst-focused reporting rather than adding superficial features.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer>
+  <script src="script.js"></script>
+</body>
 </html>

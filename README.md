@@ -1,38 +1,35 @@
-# Z3X Cybersecurity Portfolio
+# Zaid Hijazi — Cybersecurity Portfolio
 
-Multi-page GitHub Pages portfolio for defensive cybersecurity projects.
+Professional multi-page portfolio for verified defensive-security work.
 
 ## Live Site
 
-https://Z3X-1337.github.io
+https://z3x-1337.github.io
 
-## Pages
+## Positioning
 
-- `index.html` - professional landing page and profile identity.
-- `systems.html` - operating model and defensive methodology.
-- `projects.html` - repository portfolio.
-- `stack.html` - engineering standards and technical stack.
-- `contact.html` - profile links and collaboration scope.
+- Final-year Cybersecurity student.
+- Blue Team and SOC career focus.
+- Long-term direction toward threat hunting.
+- Python security automation supported by tests and CI.
 
-## Scope
+## Published Projects
 
-The site highlights practical blue-team learning projects:
+- `auth-log-analyzer` — OpenSSH authentication-event parsing and suspicious-source analysis.
+- `ioc-sanitizer` — IOC extraction, normalization, defanging, and refanging.
+- `security-header-auditor` — deterministic review of selected HTTP security headers for authorized targets.
 
-- IOC Sanitizer
-- Auth Log Analyzer
-- Security Header Auditor
+## Site Structure
 
-## Quality Bar
+- `index.html` — professional summary and verified portfolio evidence.
+- `projects.html` — project maturity, current capabilities, and engineering roadmaps.
+- `systems.html` — defensive engineering approach.
+- `stack.html` — demonstrated skills and current learning priorities.
+- `contact.html` — professional contact channels.
 
-- Cyberpunk technical visual direction with a professional layout.
-- Separate pages instead of one long scrolling page.
-- GitHub avatar integration.
-- Chakra Petch and JetBrains Mono typography.
-- Lightweight JavaScript canvas scene with no external runtime dependency.
-- Responsive desktop and mobile layouts.
-- English-only professional content.
-- Links to documented, tested repositories.
+## Design and Quality
 
-## Safety
-
-Only sanitized samples are published. The portfolio does not include real secrets, credentials, private logs, or customer data.
+- Static HTML, CSS, and minimal JavaScript.
+- Responsive navigation and accessible skip links.
+- No exaggerated statistics or unsupported professional claims.
+- Content is based on public repository behavior, tests, and CI configuration.
