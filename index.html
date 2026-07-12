@@ -29,15 +29,15 @@
     <section class="hero shell">
       <div class="hero-copy">
         <p class="kicker">Final-year Cybersecurity Student</p>
-        <h1>Building practical defensive-security tools for analysts.</h1>
-        <p class="lead">I focus on SOC workflows, authentication telemetry, IOC handling, threat-hunting fundamentals, and installable Python tools that produce explainable, testable results.</p>
+        <h1>Building practical defensive-security workflows for analysts.</h1>
+        <p class="lead">I focus on SOC case handling, authentication telemetry, IOC workflows, threat-hunting fundamentals, and local-first Python tools that produce explainable, testable results.</p>
         <div class="actions">
           <a class="button primary" href="projects.html">Review projects</a>
           <a class="button secondary" href="https://github.com/Z3X-1337">GitHub profile</a>
         </div>
         <ul class="proof-list" aria-label="Portfolio evidence">
-          <li><strong>3</strong><span>installable defensive CLIs</span></li>
-          <li><strong>41</strong><span>unit, CLI, and integration tests</span></li>
+          <li><strong>4</strong><span>installable defensive CLIs</span></li>
+          <li><strong>65</strong><span>unit, CLI, storage, and integration tests</span></li>
           <li><strong>3.10–3.12</strong><span>Python CI matrix</span></li>
         </ul>
       </div>
@@ -46,7 +46,7 @@
         <div>
           <p class="label">Current direction</p>
           <h2>SOC entry path → Threat Hunting</h2>
-          <p>Developing stronger detection logic, evidence-driven reporting, and reusable defensive automation.</p>
+          <p>Developing evidence-driven case workflows, explainable detection logic, and reusable defensive automation.</p>
         </div>
       </aside>
     </section>
@@ -58,21 +58,28 @@
       </div>
       <div class="project-grid">
         <article class="project-card featured">
-          <div class="card-top"><span class="status active">Primary project</span><span>Python · v0.1.0</span></div>
+          <div class="card-top"><span class="status active">Primary project</span><span>Python · SQLite · v0.1.0</span></div>
+          <h3>SOC CaseForge</h3>
+          <p>Connects evidence ingestion, timeline preservation, IOC extraction, deterministic findings, case storage, and analyst reporting in one local-first workflow.</p>
+          <ul><li>Installable <code>soc-caseforge</code> CLI</li><li>SQLite cases with JSON and Markdown reports</li><li>24 parser, storage, analysis, and CLI tests</li></ul>
+          <a href="https://github.com/Z3X-1337/soc-caseforge">View repository <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="project-card">
+          <div class="card-top"><span class="status">Detection utility</span><span>Python · v0.1.0</span></div>
           <h3>Auth Log Analyzer</h3>
           <p>Parses OpenSSH authentication events and surfaces repeated failures, password-spray patterns, accepted logins, and suspicious source activity.</p>
           <ul><li>Installable <code>auth-log-analyzer</code> CLI</li><li>JSON and Markdown reports</li><li>12 unit and CLI tests</li></ul>
           <a href="https://github.com/Z3X-1337/auth-log-analyzer">View repository <span aria-hidden="true">→</span></a>
         </article>
         <article class="project-card">
-          <div class="card-top"><span class="status">Supporting tool</span><span>Python · v0.1.0</span></div>
+          <div class="card-top"><span class="status">Supporting utility</span><span>Python · v0.1.0</span></div>
           <h3>IOC Sanitizer</h3>
           <p>Extracts and validates standard or commonly defanged indicators, then normalizes them for safe analyst reporting.</p>
           <ul><li>Installable <code>ioc-sanitizer</code> CLI</li><li>JSON and CSV with source traceability</li><li>13 unit and CLI tests</li></ul>
           <a href="https://github.com/Z3X-1337/ioc-sanitizer">View repository <span aria-hidden="true">→</span></a>
         </article>
         <article class="project-card">
-          <div class="card-top"><span class="status">Secondary project</span><span>Python · v0.1.0</span></div>
+          <div class="card-top"><span class="status">Web-security utility</span><span>Python · v0.1.0</span></div>
           <h3>Security Header Auditor</h3>
           <p>Audits selected HTTP response security headers for authorized targets and CI quality gates.</p>
           <ul><li>Installable <code>security-header-auditor</code> CLI</li><li>CSP observations and CI thresholds</li><li>16 unit and local integration tests</li></ul>
@@ -87,8 +94,8 @@
         <h2>Blue Team work that can be reviewed and trusted.</h2>
       </div>
       <div class="prose">
-        <p>My current goal is an entry-level SOC role. I am building the technical foundation for threat hunting through log analysis, detection reasoning, enrichment, and clear incident documentation.</p>
-        <p>The repositories now have installable CLI packages, semantic versions, changelogs, roadmaps, and CI installation checks. The next stage is deeper telemetry coverage, time-aware detections, and representative false-positive datasets.</p>
+        <p>My current goal is an entry-level SOC role. I am building the technical foundation for threat hunting through log analysis, case management, detection reasoning, evidence preservation, and clear incident documentation.</p>
+        <p>SOC CaseForge is now the central project: a tested local workflow that turns sanitized evidence into structured cases, timelines, indicators, explainable findings, and reviewable reports.</p>
       </div>
     </section>
   </main>
