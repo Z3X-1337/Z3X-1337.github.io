@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zaid Hijazi — final-year cybersecurity student focused on Blue Team, SOC operations, threat hunting, and Python security automation.">
-  <meta name="theme-color" content="#0b1220">
-  <title>Zaid Hijazi | Blue Team & SOC</title>
+  <meta name="description" content="Zaid Hijazi — cybersecurity student focused on Blue Team operations, SOC analysis, threat hunting, and Python security automation.">
+  <meta name="theme-color" content="#070b12">
+  <meta property="og:title" content="Zaid Hijazi | Cybersecurity Portfolio">
+  <meta property="og:description" content="Blue Team, SOC analysis, threat-hunting fundamentals, and defensive Python tooling backed by public engineering evidence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://z3x-1337.github.io/">
+  <title>Zaid Hijazi | Cybersecurity Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,81 +32,95 @@
   <main id="content">
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="kicker">Final-year Cybersecurity Student</p>
-        <h1>Building practical defensive-security workflows for analysts.</h1>
-        <p class="lead">I focus on SOC case handling, authentication telemetry, IOC workflows, threat-hunting fundamentals, and local-first Python tools that produce explainable, testable results.</p>
+        <div class="eyebrow"><span class="pulse"></span> Cybersecurity · Blue Team · SOC</div>
+        <h1>Security work built around <span class="accent-text">evidence.</span></h1>
+        <p class="lead">I’m Zaid Hijazi, a final-year cybersecurity student focused on SOC operations, threat-hunting fundamentals, authentication telemetry, and Python security automation.</p>
         <div class="actions">
-          <a class="button primary" href="projects.html">Review projects</a>
-          <a class="button secondary" href="https://github.com/Z3X-1337">GitHub profile</a>
+          <a class="button primary" href="projects.html">Explore projects <span>↗</span></a>
+          <a class="button secondary" href="https://github.com/Z3X-1337">GitHub <span>↗</span></a>
         </div>
-        <ul class="proof-list" aria-label="Portfolio evidence">
-          <li><strong>4</strong><span>installable defensive CLIs</span></li>
-          <li><strong>65</strong><span>unit, CLI, storage, and integration tests</span></li>
-          <li><strong>3.10–3.12</strong><span>Python CI matrix</span></li>
-        </ul>
+        <div class="proof-strip" aria-label="Public engineering evidence">
+          <div><strong>4</strong><span>public defensive CLIs</span></div>
+          <div><strong>65</strong><span>tests across projects</span></div>
+          <div><strong>3.10–3.12</strong><span>Python CI matrix</span></div>
+        </div>
       </div>
-      <aside class="profile-card">
-        <img src="https://avatars.githubusercontent.com/u/300094278?v=4" alt="Zaid Hijazi GitHub profile image">
-        <div>
-          <p class="label">Current direction</p>
-          <h2>SOC entry path → Threat Hunting</h2>
-          <p>Developing evidence-driven case workflows, explainable detection logic, and reusable defensive automation.</p>
+      <aside class="signal-card" aria-label="Current focus">
+        <div class="signal-top"><span>Current focus</span><span class="live-dot">●</span></div>
+        <div class="signal-grid">
+          <div class="signal-avatar">ZH</div>
+          <div>
+            <strong>SOC → Threat Hunting</strong>
+            <p>Building practical defensive workflows that turn sanitized evidence into structured cases, explainable findings, and reviewable reports.</p>
+          </div>
         </div>
+        <div class="signal-footer"><span>Primary project</span><a href="https://github.com/Z3X-1337/soc-caseforge">SOC CaseForge ↗</a></div>
       </aside>
     </section>
 
     <section class="section shell">
-      <div class="section-heading">
-        <p class="kicker">Selected work</p>
-        <h2>Projects backed by code, tests, packaging, and explicit scope.</h2>
-      </div>
+      <div class="section-label">01 / Selected work</div>
+      <div class="section-head"><h2>Tools with a clear security purpose.</h2><p>Public repositories are presented according to what the code, tests, packaging, and documentation actually demonstrate.</p></div>
       <div class="project-grid">
         <article class="project-card featured">
           <div class="card-top"><span class="status active">Primary project</span><span>Python · SQLite · v0.1.0</span></div>
           <h3>SOC CaseForge</h3>
-          <p>Connects evidence ingestion, timeline preservation, IOC extraction, deterministic findings, case storage, and analyst reporting in one local-first workflow.</p>
-          <ul><li>Installable <code>soc-caseforge</code> CLI</li><li>Committed sanitized demo report</li><li>24 parser, storage, analysis, and CLI tests</li></ul>
-          <a href="https://github.com/Z3X-1337/soc-caseforge">View repository <span aria-hidden="true">→</span></a>
-          <span aria-hidden="true"> · </span>
-          <a href="https://github.com/Z3X-1337/soc-caseforge/blob/main/docs/demo-report.md">Review demo report <span aria-hidden="true">→</span></a>
+          <p>Local-first SOC workflow connecting evidence ingestion, timeline preservation, IOC extraction, deterministic findings, case storage, and analyst reporting.</p>
+          <div class="mini-evidence"><span>24 tests</span><span>OpenSSH ingestion</span><span>JSON / Markdown</span></div>
+          <a class="card-link" href="https://github.com/Z3X-1337/soc-caseforge">Open repository <span>→</span></a>
         </article>
         <article class="project-card">
           <div class="card-top"><span class="status">Detection utility</span><span>Python · v0.1.0</span></div>
           <h3>Auth Log Analyzer</h3>
-          <p>Parses OpenSSH authentication events and surfaces repeated failures, password-spray patterns, accepted logins, and suspicious source activity.</p>
-          <ul><li>Installable <code>auth-log-analyzer</code> CLI</li><li>JSON and Markdown reports</li><li>12 unit and CLI tests</li></ul>
-          <a href="https://github.com/Z3X-1337/auth-log-analyzer">View repository <span aria-hidden="true">→</span></a>
+          <p>Analyzes OpenSSH authentication events and surfaces repeated failures, password-spray behavior, accepted logins, and suspicious source activity.</p>
+          <div class="mini-evidence"><span>12 tests</span><span>IPv4 / IPv6</span><span>ATT&CK rationale</span></div>
+          <a class="card-link" href="https://github.com/Z3X-1337/auth-log-analyzer">Open repository <span>→</span></a>
         </article>
         <article class="project-card">
-          <div class="card-top"><span class="status">Supporting utility</span><span>Python · v0.1.0</span></div>
+          <div class="card-top"><span class="status">IOC workflow</span><span>Python · v0.1.0</span></div>
           <h3>IOC Sanitizer</h3>
-          <p>Extracts and validates standard or commonly defanged indicators, then normalizes them for safe analyst reporting.</p>
-          <ul><li>Installable <code>ioc-sanitizer</code> CLI</li><li>JSON and CSV with source traceability</li><li>13 unit and CLI tests</li></ul>
-          <a href="https://github.com/Z3X-1337/ioc-sanitizer">View repository <span aria-hidden="true">→</span></a>
+          <p>Extracts, validates, normalizes, defangs, and refangs indicators for safer analyst reporting and evidence sharing.</p>
+          <div class="mini-evidence"><span>13 tests</span><span>JSON / CSV</span><span>Traceability</span></div>
+          <a class="card-link" href="https://github.com/Z3X-1337/ioc-sanitizer">Open repository <span>→</span></a>
         </article>
         <article class="project-card">
-          <div class="card-top"><span class="status">Web-security utility</span><span>Python · v0.1.0</span></div>
+          <div class="card-top"><span class="status">Web security</span><span>Python · v0.1.0</span></div>
           <h3>Security Header Auditor</h3>
-          <p>Audits selected HTTP response security headers for authorized targets and CI quality gates.</p>
-          <ul><li>Installable <code>security-header-auditor</code> CLI</li><li>CSP observations and CI thresholds</li><li>16 unit and local integration tests</li></ul>
-          <a href="https://github.com/Z3X-1337/security-header-auditor">View repository <span aria-hidden="true">→</span></a>
+          <p>Reviews selected HTTP response security headers for authorized targets and supports deterministic CI quality gates.</p>
+          <div class="mini-evidence"><span>16 tests</span><span>CSP observations</span><span>CI thresholds</span></div>
+          <a class="card-link" href="https://github.com/Z3X-1337/security-header-auditor">Open repository <span>→</span></a>
         </article>
       </div>
     </section>
 
-    <section class="section shell split">
+    <section class="section shell two-column">
       <div>
-        <p class="kicker">Professional target</p>
-        <h2>Blue Team work that can be reviewed and trusted.</h2>
+        <div class="section-label">02 / Direction</div>
+        <h2>From SOC foundations toward threat hunting.</h2>
       </div>
       <div class="prose">
-        <p>My current goal is an entry-level SOC role. I am building the technical foundation for threat hunting through log analysis, case management, detection reasoning, evidence preservation, and clear incident documentation.</p>
-        <p>SOC CaseForge is now the central project: a tested local workflow that turns sanitized evidence into structured cases, timelines, indicators, explainable findings, and reviewable reports.</p>
+        <p>My current goal is an entry-level SOC role. I’m developing practical capability in case handling, log analysis, evidence preservation, detection reasoning, and clear incident documentation.</p>
+        <p>SOC CaseForge is the central engineering project: a tested workflow that turns sanitized evidence into structured cases, timelines, indicators, explainable findings, and reviewable reports.</p>
+        <a class="text-link" href="systems.html">See the engineering approach →</a>
       </div>
+    </section>
+
+    <section class="section shell evidence-section">
+      <div class="section-label">03 / Evidence</div>
+      <div class="evidence-grid">
+        <div><span class="evidence-number">65</span><span>unit, CLI, storage, and local integration tests across the portfolio</span></div>
+        <div><span class="evidence-number">3</span><span>supported Python versions in the public CI matrix</span></div>
+        <div><span class="evidence-number">MIT</span><span>license used across the public defensive tooling</span></div>
+      </div>
+    </section>
+
+    <section class="section shell cta-section">
+      <div><div class="section-label">04 / Connect</div><h2>Review the work. Verify the evidence.</h2></div>
+      <div class="cta-actions"><a class="button primary" href="https://github.com/Z3X-1337">GitHub ↗</a><a class="button secondary" href="https://www.linkedin.com/in/zaid-hijazi-a34b97278/">LinkedIn ↗</a></div>
     </section>
   </main>
 
-  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer>
+  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio · Built around evidence</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
