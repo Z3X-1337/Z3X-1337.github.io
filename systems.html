@@ -1,24 +1,5 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zaid Hijazi's approach to defensive security engineering: scope, evidence, detection rationale, testing, and reporting.">
-  <meta name="theme-color" content="#0b1220"><title>Approach | Zaid Hijazi</title><link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">ZH</span><span><strong>Zaid Hijazi</strong><small>Blue Team · SOC · Security Automation</small></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="site-nav"><a href="index.html">Home</a><a href="projects.html">Projects</a><a aria-current="page" href="systems.html">Approach</a><a href="stack.html">Skills</a><a href="contact.html">Contact</a></nav></header>
-  <main id="content" class="shell page-main">
-    <section class="page-intro"><p class="kicker">Engineering approach</p><h1>Start with evidence. End with an explainable decision.</h1><p class="lead">My portfolio follows a defensive workflow that prioritizes reproducibility over visual complexity or unsupported claims.</p></section>
-    <section class="principle-grid">
-      <article><span>01</span><h2>Define scope</h2><p>State the authorized use case, supported input, and explicit limitations before implementing detection logic.</p></article>
-      <article><span>02</span><h2>Normalize evidence</h2><p>Convert raw text and events into stable structures that can be tested, counted, filtered, and exported.</p></article>
-      <article><span>03</span><h2>Explain the signal</h2><p>A finding should expose the threshold, observation, or policy that caused it—rather than returning an unexplained severity.</p></article>
-      <article><span>04</span><h2>Test behavior</h2><p>Validate parsing, edge cases, output contracts, and command-line behavior across supported Python versions.</p></article>
-      <article><span>05</span><h2>Report limitations</h2><p>Detections are hypotheses for analyst review. Documentation should identify false-positive conditions and missing context.</p></article>
-      <article><span>06</span><h2>Iterate from use</h2><p>Expand coverage only after the current workflow is reliable, understandable, and useful to a real analyst task.</p></article>
-    </section>
-  </main>
-  <footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer><script src="script.js"></script>
-</body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Zaid Hijazi's evidence-first approach to defensive security engineering."><meta name="theme-color" content="#0b1220"><title>Approach | Zaid Hijazi</title><link rel="stylesheet" href="styles.css"></head>
+<body><a class="skip-link" href="#content">Skip to content</a><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">ZH</span><span><strong>Zaid Hijazi</strong><small>Blue Team · SOC · Security Automation</small></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="site-nav"><a href="index.html">Home</a><a href="projects.html">Projects</a><a aria-current="page" href="systems.html">Approach</a><a href="stack.html">Skills</a><a href="contact.html">Contact</a></nav></header>
+<main id="content" class="shell page-main"><section class="page-intro"><p class="kicker">Engineering approach</p><h1>Evidence first. Explain the signal. Document the limits.</h1><p class="lead">The public work emphasizes reproducible defensive tooling rather than unsupported severity claims or visual complexity.</p></section><section class="principle-grid"><article><span>01</span><h2>Scope</h2><p>Define the supported use case, inputs, and explicit limitations before implementing detection logic.</p></article><article><span>02</span><h2>Normalize</h2><p>Turn raw events and text into stable structures that can be tested, filtered, counted, and exported.</p></article><article><span>03</span><h2>Explain</h2><p>Make findings traceable to an observation, threshold, parser result, or policy instead of unexplained severity labels.</p></article><article><span>04</span><h2>Test</h2><p>Validate parsers, edge cases, output contracts, and CLI behavior across supported Python versions.</p></article><article><span>05</span><h2>Report limits</h2><p>Keep detections reviewable by documenting false-positive conditions, missing context, and current coverage.</p></article><article><span>06</span><h2>Iterate</h2><p>Expand coverage after the existing workflow is reliable and useful to a concrete analyst task.</p></article></section></main><footer class="site-footer shell"><span>© <span data-year></span> Zaid Hijazi</span><span>Defensive security portfolio</span></footer><script src="script.js"></script></body></html>
