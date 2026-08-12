@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>Zaid Hijazi — Security Research Desk</title>
+    <title>Z3X-1337 — Security Engineering Notes</title>
     <link>https://z3x-1337.github.io/</link>
-    <description>Evidence-first field notes on defensive security, authorized web review, and practical automation.</description>
+    <description>Evidence-first public security engineering notes by Zaid Hijazi.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Aug 2026 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://z3x-1337.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Security headers are control surfaces, not checkbox evidence.</title>
-      <link>https://z3x-1337.github.io/writing/security-headers.html</link>
-      <guid isPermaLink="true">https://z3x-1337.github.io/writing/security-headers.html</guid>
-      <pubDate>Thu, 13 Aug 2026 12:00:00 +0000</pubDate>
-      <description><![CDATA[A practical note on reviewing HTTP security headers as controls rather than a simple pass/fail checklist.]]></description>
-    </item>
-    <item>
-      <title>Authentication telemetry needs context.</title>
-      <link>https://z3x-1337.github.io/writing/authentication-telemetry.html</link>
-      <guid isPermaLink="true">https://z3x-1337.github.io/writing/authentication-telemetry.html</guid>
-      <pubDate>Thu, 13 Aug 2026 12:00:00 +0000</pubDate>
-      <description><![CDATA[Repeated authentication failures are a review signal, not a standalone verdict.]]></description>
-    </item>
-    <item>
-      <title>IOC provenance is part of the finding.</title>
-      <link>https://z3x-1337.github.io/writing/ioc-provenance.html</link>
-      <guid isPermaLink="true">https://z3x-1337.github.io/writing/ioc-provenance.html</guid>
-      <pubDate>Thu, 13 Aug 2026 12:00:00 +0000</pubDate>
-      <description><![CDATA[Keep an indicator's source, raw representation, normalization, and limitations connected.]]></description>
+      <title>Security headers are control surfaces.</title>
+      <link>https://z3x-1337.github.io/research/security-headers.html</link>
+      <guid isPermaLink="true">https://z3x-1337.github.io/research/security-headers.html</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A practical note on reviewing HTTP security headers as route-specific controls rather than a pass/fail checklist.</description>
     </item>
     <item>
       <title>Authorization is a server-side decision.</title>
-      <link>https://z3x-1337.github.io/writing/server-side-authorization.html</link>
-      <guid isPermaLink="true">https://z3x-1337.github.io/writing/server-side-authorization.html</guid>
-      <pubDate>Thu, 13 Aug 2026 12:00:00 +0000</pubDate>
-      <description><![CDATA[A hidden button or client-side state is not access control; server-side authorization makes the decision.]]></description>
+      <link>https://z3x-1337.github.io/research/server-side-authorization.html</link>
+      <guid isPermaLink="true">https://z3x-1337.github.io/research/server-side-authorization.html</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A concise note on why authorization decisions belong on the service that owns the protected action or resource.</description>
+    </item>
+    <item>
+      <title>Authentication telemetry needs context.</title>
+      <link>https://z3x-1337.github.io/research/authentication-telemetry.html</link>
+      <guid isPermaLink="true">https://z3x-1337.github.io/research/authentication-telemetry.html</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Repeated authentication failures are useful review signals, not standalone verdicts.</description>
+    </item>
+    <item>
+      <title>IOC provenance is part of the finding.</title>
+      <link>https://z3x-1337.github.io/research/ioc-provenance.html</link>
+      <guid isPermaLink="true">https://z3x-1337.github.io/research/ioc-provenance.html</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Keep an indicator’s raw source, normalized form, transformation, and limitations in the same reviewable record.</description>
     </item>
   </channel>
 </rss>

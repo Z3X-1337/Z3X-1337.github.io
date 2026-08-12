@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Z3X mark</title>
+  <desc id="desc">A geometric monogram made from three offset lines.</desc>
+  <rect width="64" height="64" fill="#0a0d11"/>
+  <path d="M13 17h37L31 47h20" fill="none" stroke="#f3f1ea" stroke-linecap="square" stroke-linejoin="miter" stroke-width="5"/>
+  <path d="M13 47h15" fill="none" stroke="#80cfff" stroke-linecap="square" stroke-width="5"/>
+</svg>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Evidence-first security field notes by Zaid Hijazi on web controls, authorization, authentication telemetry, and indicator provenance.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Research Notes — Z3X-1337">
+    <meta property="og:description" content="Evidence-first security field notes on web controls, authorization, telemetry, and provenance.">
+    <meta property="og:url" content="https://z3x-1337.github.io/research/">
+    <link rel="canonical" href="https://z3x-1337.github.io/research/">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="../rss.xml">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <title>Research Notes — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="index.html" aria-current="page">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <section class="container page-hero">
+        <div class="page-heading reveal">
+          <div><p class="eyebrow">Research / public notes</p><h1>Field notes for controls that must be inspected.</h1></div>
+          <p class="lede">Educational writing anchored in public projects and general security practice. It does not represent third-party vulnerability reports or personal Bug Bounty findings.</p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="research-list-title">
+        <div class="container">
+          <div class="research-controls reveal">
+            <div class="search-field"><label for="research-search">Search notes</label><input id="research-search" type="search" placeholder="Search notes, topics, or terms" autocomplete="off" data-research-search></div>
+            <p class="result-count" aria-live="polite" data-result-count>4 notes</p>
+          </div>
+          <h2 id="research-list-title" class="eyebrow" style="margin-bottom: 1rem">Published notes</h2>
+          <div class="research-list">
+            <a href="security-headers.html" data-research-card data-search="security headers http csp redirects content security policy web security controls">
+              <span class="entry-number">01</span><span class="entry-type">Web security / controls</span><span class="entry-read">04 min →</span>
+              <div><h2>Security headers are control surfaces.</h2><p>Presence is only a starting point: a useful review keeps the response route, redirect chain, policy directives, and limits of automation together.</p></div>
+            </a>
+            <a href="server-side-authorization.html" data-research-card data-search="authorization server side access control tenant ownership actor action resource api application security">
+              <span class="entry-number">02</span><span class="entry-type">Application security</span><span class="entry-read">04 min →</span>
+              <div><h2>Authorization is a server-side decision.</h2><p>A client-side condition cannot establish access control. The service must assess actor, action, resource, and the relevant boundary.</p></div>
+            </a>
+            <a href="authentication-telemetry.html" data-research-card data-search="authentication telemetry openssh log detection engineering password spray failed login source ip evidence">
+              <span class="entry-number">03</span><span class="entry-type">Detection engineering</span><span class="entry-read">05 min →</span>
+              <div><h2>Authentication telemetry needs context.</h2><p>Repeated failures are a review signal—not a verdict. Source, identity, method, time, and later behavior change the interpretation.</p></div>
+            </a>
+            <a href="ioc-provenance.html" data-research-card data-search="ioc indicator compromise provenance defang refang normalization evidence source context threat intelligence">
+              <span class="entry-number">04</span><span class="entry-type">Evidence handling</span><span class="entry-read">04 min →</span>
+              <div><h2>IOC provenance is part of the finding.</h2><p>Normalizing an indicator is useful when the raw form, source, transformation, and analytical limits remain attached for a later reviewer.</p></div>
+            </a>
+          </div>
+          <p class="empty-state" data-empty-state hidden>No published note matches that search. Try a broader term.</p>
+        </div>
+      </section>
+      <section class="site-section">
+        <div class="container signal-panel reveal">
+          <div><p class="section-index">Content standard</p><h2>Useful, bounded, and attributable.</h2></div>
+          <div><p>The notes distinguish illustrative behavior from demonstrated project behavior. When a tool has a limitation, the limitation is part of the content—not a footnote to hide.</p><p class="inline-actions" style="margin-top: 1.5rem"><a class="button" href="../projects/">See the projects behind the notes</a></p></div>
+        </div>
+      </section>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="index.html">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

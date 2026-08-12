@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Public security, privacy, and safety-oriented software projects from Z3X-1337, including SOC workflows, HTTP header review, and bounded AI systems.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects — Z3X-1337">
+    <meta property="og:description" content="Public security, privacy, and safety-oriented software projects from Z3X-1337.">
+    <meta property="og:url" content="https://z3x-1337.github.io/projects/">
+    <link rel="canonical" href="https://z3x-1337.github.io/projects/">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <title>Projects — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="../research/">Research</a><a href="index.html" aria-current="page">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <section class="container page-hero">
+        <div class="page-heading reveal">
+          <div><p class="eyebrow">Projects / public evidence</p><h1>Software with declared limits.</h1></div>
+          <p class="lede">Selected repositories demonstrate the current public work surface. Descriptions describe project intent and documented behavior, not a claim of real-world deployment or external impact.</p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="security-tools-title">
+        <div class="container projects-layout">
+          <div class="section-header reveal"><div><p class="section-index">01 / Security tooling</p><h2 id="security-tools-title">Deterministic, local, reviewable.</h2></div><p>Four small Python projects focus on analyst workflows and authorized web-control observations. Their repositories document test suites, packaging, and operating boundaries.</p></div>
+          <div class="project-ledger reveal">
+            <article class="project-row"><div><h3>SOC CaseForge</h3></div><p>Local-first SOC case workspace for sanitized evidence, timelines, indicators, deterministic detections, and Markdown or JSON reports.</p><span class="stack">Python / SQLite / CLI<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/soc-caseforge" target="_blank" rel="noopener noreferrer">Source</a></article>
+            <article class="project-row"><div><h3>Security Header Auditor</h3></div><p>Authorized HTTP response review for selected security headers, redirect behavior, baseline CSP observations, and CI quality thresholds.</p><span class="stack">Python / Stdlib / CLI<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/security-header-auditor" target="_blank" rel="noopener noreferrer">Source</a></article>
+            <article class="project-row"><div><h3>Auth Log Analyzer</h3></div><p>OpenSSH authentication-log analysis that produces explainable JSON and Markdown observations for supported events.</p><span class="stack">Python / CLI / ATT&amp;CK assistance<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/auth-log-analyzer" target="_blank" rel="noopener noreferrer">Source</a></article>
+            <article class="project-row"><div><h3>IOC Sanitizer</h3></div><p>Local utility for extracting, validating, normalizing, defanging, and refanging supported indicators while preserving the original form.</p><span class="stack">Python / Stdlib / CLI<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/ioc-sanitizer" target="_blank" rel="noopener noreferrer">Source</a></article>
+          </div>
+          <p class="boundary-note"><strong>Important boundary:</strong> these tools assist structured review. They do not establish malicious intent, application exploitability, or security of an entire system on their own.</p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="systems-title">
+        <div class="container projects-layout">
+          <div class="section-header reveal"><div><p class="section-index">02 / Safety-oriented systems</p><h2 id="systems-title">Policy stays outside the model.</h2></div><p>Other public repositories explore authorization gates, provenance, privacy controls, and software that constrains its own authority.</p></div>
+          <div class="project-ledger reveal">
+            <article class="project-row"><div><h3>ToxicJoin</h3></div><p>Compositional privacy firewall for AI data agents. It evaluates proposed SQL before execution and returns deterministic allow, rewrite, or block outcomes.</p><span class="stack">Python / FastAPI / DuckDB<br>Apache-2.0</span><a class="arrow-link" href="https://github.com/Z3X-1337/toxicjoin" target="_blank" rel="noopener noreferrer">Source</a></article>
+            <article class="project-row"><div><h3>Rayluno</h3></div><p>Local-first bilingual desktop assistant with registered skills, deterministic allow-lists, explicit approvals, and local execution receipts.</p><span class="stack">Python / SQLite / Desktop<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/rayluno" target="_blank" rel="noopener noreferrer">Source</a></article>
+            <article class="project-row"><div><h3>Unwritten</h3></div><p>Evidence-grounded developer tool that turns an approved candidate workflow rule into a bounded policy, counterexample, and verified repair replay.</p><span class="stack">Node.js / Static build<br>MIT</span><a class="arrow-link" href="https://github.com/Z3X-1337/unwritten" target="_blank" rel="noopener noreferrer">Source</a></article>
+          </div>
+          <p class="boundary-note"><strong>Selection note:</strong> the forked <code>datahub-skills</code> repository is intentionally not presented as original work. It remains a dependency/context reference, not an authorship claim.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="../research/">Research</a><a href="index.html">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
