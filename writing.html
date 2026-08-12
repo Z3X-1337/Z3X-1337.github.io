@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-first cybersecurity field notes by Zaid Hijazi on web security, SOC telemetry, authorization boundaries, and IOC handling.">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Writing — Zaid Hijazi">
+  <meta property="og:description" content="Short, evidence-first notes on defensive security and authorized web review.">
+  <meta property="og:url" content="https://z3x-1337.github.io/writing.html">
+  <link rel="canonical" href="https://z3x-1337.github.io/writing.html">
+  <link rel="alternate" type="application/rss+xml" title="Zaid Hijazi — Security Research Desk" href="rss.xml">
+  <title>Writing — Zaid Hijazi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="writing">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="index.html" aria-label="Zaid Hijazi home"><span class="wordmark-mark">ZH</span><span class="wordmark-copy"><strong>Z3X—1337</strong><span>security research desk</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>Menu</button>
+      <nav class="primary-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="index.html">Home</a><a aria-current="page" href="writing.html">Writing</a><a href="projects.html">Projects</a><a href="systems.html">Method</a><a href="stack.html">Stack</a><a href="contact.html" class="nav-cta">Contact ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="container page-hero">
+      <div class="page-hero-row" data-reveal>
+        <div><p class="eyebrow">Field notes / 2026</p><h1>Write down what the evidence actually says.</h1></div>
+        <p>Short notes grounded in public project behavior, general defensive practice, and authorized-review principles.</p>
+      </div>
+      <p data-reveal>These posts are educational. They do not describe third-party findings, customer data, or claims of vulnerability discovery.</p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar" data-reveal>
+          <label for="writing-search">Find a note</label>
+          <input id="writing-search" type="search" placeholder="Search web, SOC, evidence…" autocomplete="off" data-filter-input>
+        </div>
+        <div class="article-list" aria-live="polite">
+          <a class="article-row" href="writing/security-headers.html" data-searchable data-reveal>
+            <span class="article-number">01</span>
+            <span><h2>Security headers are control surfaces, not checkbox evidence.</h2><p>Presence matters, but redirects, response variants, policy directives, and browser behavior determine what a reviewer should conclude.</p></span>
+            <span class="article-meta">Web security<br>04 min</span>
+          </a>
+          <a class="article-row" href="writing/authentication-telemetry.html" data-searchable data-reveal>
+            <span class="article-number">02</span>
+            <span><h2>Authentication telemetry needs context.</h2><p>Repeated failures, usernames, a later success, source address, and method form a reviewable picture — not an automatic verdict.</p></span>
+            <span class="article-meta">SOC / telemetry<br>05 min</span>
+          </a>
+          <a class="article-row" href="writing/ioc-provenance.html" data-searchable data-reveal>
+            <span class="article-number">03</span>
+            <span><h2>IOC provenance is part of the finding.</h2><p>Indicators become more useful when the raw match, normalized value, source context, and caveats stay connected.</p></span>
+            <span class="article-meta">Evidence handling<br>04 min</span>
+          </a>
+          <a class="article-row" href="writing/server-side-authorization.html" data-searchable data-reveal>
+            <span class="article-number">04</span>
+            <span><h2>Authorization is a server-side decision.</h2><p>A hidden control, client-side state, or predictable URL is not evidence that an actor may perform an action or access a resource.</p></span>
+            <span class="article-meta">Web / API security<br>04 min</span>
+          </a>
+        </div>
+        <p class="empty-state" data-empty-state>No notes match that search. Try a broader term.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container site-footer"><span>© <span data-year></span> Zaid Hijazi</span><span>observe · normalize · explain · validate</span><a href="rss.xml">RSS</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

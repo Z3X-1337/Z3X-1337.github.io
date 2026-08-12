@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://z3x-1337.github.io/sitemap.xml
