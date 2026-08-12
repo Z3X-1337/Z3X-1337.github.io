@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical note on keeping IOC source context, transformations, and normalized values together for reviewable security evidence.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="IOC provenance is part of the finding — Z3X-1337">
+    <meta property="og:description" content="Keep an indicator’s raw source, normalized form, transformation, and limitations in the same reviewable record.">
+    <meta property="og:url" content="https://z3x-1337.github.io/research/ioc-provenance.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://z3x-1337.github.io/research/ioc-provenance.html">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="../rss.xml">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "IOC provenance is part of the finding.",
+        "description": "A practical note on keeping IOC source context, transformations, and normalized values together for reviewable security evidence.",
+        "datePublished": "2026-08-13",
+        "dateModified": "2026-08-13",
+        "author": {"@type": "Person", "name": "Zaid Hijazi", "url": "https://github.com/Z3X-1337"},
+        "mainEntityOfPage": "https://z3x-1337.github.io/research/ioc-provenance.html"
+      }
+    </script>
+    <title>IOC provenance is part of the finding — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="article-progress" aria-hidden="true"><span data-reading-progress></span></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="index.html" aria-current="page">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="article">
+      <header class="container article-hero reveal">
+        <p class="eyebrow">Note 04 / Evidence handling</p>
+        <h1>IOC provenance is part of the finding.</h1>
+        <p class="article-dek">An extracted indicator becomes more useful when the raw match, normalized value, source context, transformation, and caveats remain attached for later review.</p>
+        <p class="article-meta"><span>By Zaid Hijazi</span><span><time datetime="2026-08-13">13 August 2026</time></span><span>4 min read</span></p>
+      </header>
+      <div class="container article-grid">
+        <article class="article-body" data-article>
+          <p>Indicators of compromise are commonly moved from logs and notes into tickets, reports, scripts, and blocklists. During that movement it is easy to preserve only a cleaned value and lose the details that make it possible to understand what was actually observed.</p>
+          <p>A normalized value can be useful for matching. The raw form and source context are useful for review. Strong evidence handling preserves both.</p>
+
+          <h2 id="normalization" data-section>Normalization changes the evidence.</h2>
+          <p>Defanging and refanging are familiar examples. A report may intentionally alter a URL to reduce accidental clicks. A tool can normalize the value for structured output, but that transform should not erase the original representation or imply independent validation.</p>
+          <pre class="code-block" aria-label="Illustrative provenance-aware IOC record"><code><span class="code-blue">raw_match</span>:         hxxps://example[.]test/login?source=report
+<span class="code-blue">normalized_value</span>:  https://example.test/login?source=report
+<span class="code-blue">indicator_type</span>:   url
+<span class="code-blue">source_context</span>:   analyst-note.txt:14
+<span class="code-blue">transform</span>:         refanged
+<span class="code-blue">validation</span>:        syntax only; no enrichment performed</code></pre>
+          <p>That small record carries more information than a standalone URL. It tells a reviewer why strings differ, where the match appeared, and where the process stopped.</p>
+
+          <h2 id="record" data-section>Build a reviewable record.</h2>
+          <p>The right model depends on the workflow, but a compact record often includes:</p>
+          <ul>
+            <li>the <strong>raw match</strong> as it appeared in input;</li>
+            <li>a <strong>normalized value</strong> when a safe, documented transform applies;</li>
+            <li>the <strong>indicator category</strong> and validation outcome;</li>
+            <li>the <strong>source location or surrounding context</strong> available to the tool; and</li>
+            <li>the <strong>limitations</strong>, including an absent enrichment step or unsupported input form.</li>
+          </ul>
+
+          <h2 id="sharing" data-section>Safe sharing is deliberate.</h2>
+          <p>Defanged representations can make reports safer to copy and discuss, but they are not a security guarantee. Output should make the state clear—especially where someone could paste a value into another tool. A visible label is safer than silently modifying a value and assuming the next reader notices.</p>
+          <aside class="article-callout"><p class="label">Evidence principle</p><p>Preserve the original matched form, normalized value, and documented transform together. A finding remains easier to validate when its provenance does not get separated from it.</p></aside>
+
+          <h2 id="limits" data-section>Keep the limits visible.</h2>
+          <p><a href="https://github.com/Z3X-1337/ioc-sanitizer" target="_blank" rel="noopener noreferrer">IOC Sanitizer</a> is a public local Python utility for extracting, validating, normalizing, defanging, and refanging supported common indicators. It does not claim that an indicator is malicious, active, or relevant to a particular incident.</p>
+          <p>That boundary is not a weakness. It is what allows the output to remain deterministic and honest enough for someone else to inspect, reproduce, and build on.</p>
+
+          <h2 id="workflow" data-section>Provenance is part of engineering quality.</h2>
+          <p>The same pattern appears in incident cases and detection outputs: preserve input, transform it deliberately, explain the rule, and state where automation ends. This makes a result more transferable than a high-level score because it gives the next analyst material to assess.</p>
+          <section class="related-notes" aria-labelledby="related-title"><p class="eyebrow" id="related-title">Related reading</p><ul><li><a href="authentication-telemetry.html">Authentication telemetry needs context.</a></li><li><a href="security-headers.html">Security headers are control surfaces.</a></li></ul></section>
+          <nav class="article-nav" aria-label="Adjacent research notes"><a href="authentication-telemetry.html"><span>Previous</span><strong>Authentication telemetry needs context.</strong></a><a href="security-headers.html"><span>Return to start</span><strong>Security headers are control surfaces.</strong></a></nav>
+        </article>
+        <aside class="article-aside">
+          <p>On this page</p>
+          <nav aria-label="Table of contents"><a href="#normalization" data-toc-link>Normalization changes evidence</a><a href="#record" data-toc-link>Build a record</a><a href="#sharing" data-toc-link>Safe sharing</a><a href="#limits" data-toc-link>Keep limits visible</a><a href="#workflow" data-toc-link>Engineering quality</a></nav>
+          <div class="article-actions"><button class="copy-button" type="button" data-copy-link>Copy link</button></div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="index.html">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

@@ -1,32 +1,43 @@
-# Zaid Hijazi — Security Research Desk
+# Z3X-1337 — Security Engineering Notes
 
-Static GitHub Pages portfolio and field-notes site for the public defensive-security work of Zaid Hijazi.
+The public GitHub Pages site for [Zaid Hijazi](https://github.com/Z3X-1337). It presents verified public projects and educational security notes without claiming third-party findings, client work, CVEs, or bounty results.
 
-Live site: [z3x-1337.github.io](https://z3x-1337.github.io/)
+Live: [z3x-1337.github.io](https://z3x-1337.github.io/)
 
 ## Architecture
 
-The site is intentionally static so it deploys directly through GitHub Pages without a build step or runtime dependencies.
+This is a deliberately dependency-free static site so it can publish directly from the `main` branch through GitHub Pages.
 
-- `index.html` — research-desk home, current direction, project evidence, and latest writing.
-- `writing.html` — searchable field-note index.
-- `writing/` — individual long-form article pages with table of contents and adjacent-note navigation.
-- `projects.html` — project index with public evidence and maturity boundaries.
-- `systems.html` — evidence-first working method.
-- `stack.html` — demonstrated capabilities and stated development priorities.
-- `contact.html` — professional channels and handling boundary.
-- `styles.css` — site tokens, responsive layout rules, interaction states, and article typography.
-- `script.js` — accessible mobile navigation, reduced-motion-safe reveal enhancement, article TOC state, and local writing search.
+- `index.html` — introduction, research areas, selected work, and recent notes.
+- `research/` — searchable research index and four long-form field notes.
+- `projects/` — public project evidence and technology boundaries.
+- `about/` — working principles, responsible-scope statement, and contact channels.
+- `assets/css/site.css` — visual tokens, responsive layout, article styles, and accessibility states.
+- `assets/js/site.js` — accessible mobile navigation, reduced-motion-safe enhancements, article progress/TOC, and local search.
+- `scripts/verify-site.mjs` — dependency-free verification for HTML structure and internal links.
+
+## Local preview and verification
+
+Any static server can preview the site. For example:
+
+```bash
+python -m http.server 4173
+```
+
+Then open `http://localhost:4173`.
+
+Run the repository checks with:
+
+```bash
+npm run check
+```
+
+The verification script checks declared internal links, duplicate document titles, missing page descriptions, and expected accessibility primitives. It intentionally does not execute network requests.
 
 ## Content standard
 
-The site only presents claims tied to public repositories, documented training, or explicitly stated learning priorities. It does not claim CVEs, third-party findings, client work, bounty payouts, or exploit impact.
+Project claims are tied to the linked public repositories. The four field notes are educational material; illustrative examples are clearly framed as such and do not represent findings against third-party systems.
 
-## Quality and deployment
+## Deployment
 
-- Responsive static HTML/CSS/JavaScript compatible with GitHub Pages.
-- Semantic landmarks, skip links, keyboard-visible focus states, accessible mobile navigation, and `prefers-reduced-motion` handling.
-- Canonical URLs, Open Graph metadata, article structured data, `robots.txt`, `sitemap.xml`, RSS, and a custom `404.html`.
-- No external scripts, analytics, secrets, or package dependencies.
-
-To preview locally, serve the repository with any static web server and open the local URL in a browser.
+GitHub Pages can serve the static files directly from the `main` branch. `.nojekyll` prevents Jekyll from rewriting or omitting directories that begin with underscores in future content additions.

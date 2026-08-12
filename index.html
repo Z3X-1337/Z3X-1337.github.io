@@ -1,176 +1,177 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zaid Hijazi is a cybersecurity student building explainable SOC workflows, web-security utilities, and practical Python automation.">
-  <meta name="theme-color" content="#0a0b0d">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Zaid Hijazi — Security Research Desk">
-  <meta property="og:description" content="A field notebook for defensive security engineering, SOC workflows, and evidence-first research.">
-  <meta property="og:url" content="https://z3x-1337.github.io/">
-  <link rel="canonical" href="https://z3x-1337.github.io/">
-  <link rel="alternate" type="application/rss+xml" title="Zaid Hijazi — Security Research Desk" href="rss.xml">
-  <title>Zaid Hijazi — Security Research Desk</title>
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Zaid Hijazi",
-    "url": "https://z3x-1337.github.io/",
-    "sameAs": ["https://github.com/Z3X-1337", "https://www.linkedin.com/in/zaid-hijazi-a34b97278/"],
-    "jobTitle": "Cybersecurity Student"
-  }
-  </script>
-</head>
-<body data-page="home">
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="wordmark" href="index.html" aria-label="Zaid Hijazi home">
-        <span class="wordmark-mark">ZH</span>
-        <span class="wordmark-copy"><strong>Z3X—1337</strong><span>security research desk</span></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>Menu</button>
-      <nav class="primary-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-        <a aria-current="page" href="index.html">Home</a>
-        <a href="writing.html">Writing</a>
-        <a href="projects.html">Projects</a>
-        <a href="systems.html">Method</a>
-        <a href="stack.html">Stack</a>
-        <a href="contact.html" class="nav-cta">Contact ↗</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Z3X-1337: public security engineering notes, defensive tooling, web security controls, and evidence-first systems by Zaid Hijazi.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Z3X-1337 — Security Engineering">
+    <meta property="og:description" content="Public security engineering notes, defensive tooling, and evidence-first systems by Zaid Hijazi.">
+    <meta property="og:url" content="https://z3x-1337.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://z3x-1337.github.io/">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="rss.xml">
+    <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zaid Hijazi",
+        "alternateName": "Z3X-1337",
+        "url": "https://z3x-1337.github.io/",
+        "sameAs": ["https://github.com/Z3X-1337", "https://www.linkedin.com/in/zaid-hijazi-a34b97278/"]
+      }
+    </script>
+    <title>Z3X-1337 — Security Engineering</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Z3X-1337 home">
+          <span class="brand-mark" aria-hidden="true">Z3X</span>
+          <span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="index.html" aria-current="page">Index</a>
+          <a href="research/">Research</a>
+          <a href="projects/">Projects</a>
+          <a href="about/">About</a>
+          <a href="about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <main id="main-content">
-    <section class="hero container">
-      <div class="hero-grid">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">01 / Personal research desk</p>
-          <h1 class="hero-title">Make the <em>signal</em> explainable.</h1>
-          <p>I'm Zaid Hijazi — a cybersecurity student building small, reviewable systems for SOC workflows, web-security hygiene, and threat-hunting fundamentals.</p>
+    <main id="content">
+      <section class="container hero" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Zaid Hijazi / public work surface</p>
+          <h1 id="hero-title">Security decisions deserve <em>evidence.</em></h1>
+          <p class="lede">I build public tools and notes around defensive workflows, HTTP control review, provenance-aware evidence handling, and bounded agent systems.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="projects.html">Explore the work <span aria-hidden="true">↗</span></a>
-            <a class="button button-quiet" href="writing.html">Read field notes</a>
+            <a class="button button--solid" href="research/">Read research notes</a>
+            <a class="button" href="projects/">Inspect public work</a>
           </div>
-          <ul class="hero-meta" aria-label="Portfolio evidence">
-            <li><strong>04</strong><span>public security CLIs</span></li>
-            <li><strong>65</strong><span>documented tests</span></li>
-            <li><strong>3.10–3.12</strong><span>Python CI matrix</span></li>
-          </ul>
         </div>
-
-        <aside class="dossier" data-reveal aria-label="Current research direction">
-          <div class="dossier-head"><span class="dossier-id">case / 004</span><span>open notebook</span></div>
-          <div class="dossier-body">
-            <p class="dossier-kicker">Current direction</p>
-            <h2>SOC operations → threat hunting</h2>
-            <p class="dossier-note">Turning raw telemetry into a structured case, a defensible observation, and a clear next action.</p>
-            <div class="dossier-rows">
-              <div class="dossier-row"><span>primary vector</span><strong>defensive automation</strong></div>
-              <div class="dossier-row"><span>working style</span><strong>local-first / testable</strong></div>
-              <div class="dossier-row"><span>proof surface</span><strong>code + tests + docs</strong></div>
-              <div class="dossier-row"><span>boundary</span><strong>authorized data only</strong></div>
-            </div>
-            <div class="dossier-footer"><span class="status-dot" aria-hidden="true"></span> open to entry-level SOC opportunities</div>
-          </div>
+        <aside class="hero-dossier reveal" aria-label="Research operating principles">
+          <div class="dossier-heading"><span>Operating profile</span><span>Active</span></div>
+          <ol class="dossier-list">
+            <li><b>01</b><div><strong>Scope before assertion</strong><small>Keep claims bounded to observable behavior and approved work.</small></div></li>
+            <li><b>02</b><div><strong>Evidence stays attached</strong><small>Preserve sources, transformations, limitations, and review context.</small></div></li>
+            <li><b>03</b><div><strong>Security must explain itself</strong><small>Prefer repeatable controls and outputs a human can inspect.</small></div></li>
+          </ol>
         </aside>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" aria-labelledby="focus-heading">
-      <div class="container">
-        <div class="section-heading" data-reveal>
-          <div><p class="section-label">02 / Research areas</p><h2 id="focus-heading">A focused surface area, not a wall of buzzwords.</h2></div>
-          <p>Every area is tied to a public artifact, a documented workflow, or a stated learning priority.</p>
+      <section class="site-section" aria-labelledby="areas-title">
+        <div class="container">
+          <div class="section-header reveal">
+            <div><p class="section-index">01 / Research areas</p><h2 id="areas-title">Where the work is grounded.</h2></div>
+            <p>These areas reflect public repositories and published notes. They are not a list of unverified certifications, client engagements, or third-party findings.</p>
+          </div>
+          <div class="principle-grid reveal">
+            <article class="principle">
+              <span class="number">A / WEB</span>
+              <h3>Web security controls</h3>
+              <p>Reviewing HTTP response controls, redirect behavior, and policy observations with clear boundaries around what automation can establish.</p>
+            </article>
+            <article class="principle">
+              <span class="number">B / EVIDENCE</span>
+              <h3>Defensive evidence systems</h3>
+              <p>Local-first workflows for authentication telemetry, indicators, case records, and reports that remain reviewable by an analyst.</p>
+            </article>
+            <article class="principle">
+              <span class="number">C / AGENTS</span>
+              <h3>Bounded agent authority</h3>
+              <p>Safety-oriented systems where policy, explicit approval, and deterministic checks remain outside a model’s unrestricted control.</p>
+            </article>
+          </div>
         </div>
-        <div class="signal-grid">
-          <article class="signal-item" data-reveal><span class="signal-index">A / 01</span><h3>SOC operations</h3><p>Case handling, evidence preservation, authentication telemetry, and analyst-oriented reporting.</p></article>
-          <article class="signal-item" data-reveal><span class="signal-index">A / 02</span><h3>Detection reasoning</h3><p>Thresholds, normalized events, explainable findings, and explicit false-positive boundaries.</p></article>
-          <article class="signal-item" data-reveal><span class="signal-index">A / 03</span><h3>Web-security hygiene</h3><p>Authorized HTTP response review, redirect behavior, CSP observations, and quality gates.</p></article>
-          <article class="signal-item" data-reveal><span class="signal-index">A / 04</span><h3>Security automation</h3><p>Installable Python CLIs that stay deterministic, testable, and useful from the command line.</p></article>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" aria-labelledby="writing-heading">
-      <div class="container">
-        <div class="section-heading" data-reveal>
-          <div><p class="section-label">03 / Field notes</p><h2 id="writing-heading">Short writing for people who care about the evidence.</h2></div>
-          <p><a class="text-link" href="writing.html">View all writing →</a></p>
+      <section class="site-section" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-header reveal">
+            <div><p class="section-index">02 / Selected work</p><h2 id="work-title">Tools with an explicit boundary.</h2></div>
+            <p>Each project links to its public source. The descriptions below stay close to the codebase and its documentation rather than inflating an implementation into a broader claim.</p>
+          </div>
+          <div class="project-grid">
+            <a class="project-card reveal" href="https://github.com/Z3X-1337/soc-caseforge" target="_blank" rel="noopener noreferrer">
+              <div class="card-top"><span class="card-number">01 / PYTHON</span><span class="tag tag--signal">Local-first</span></div>
+              <div><h3>SOC CaseForge</h3><p>A SQLite-backed case workflow for sanitized evidence ingestion, timelines, indicators, deterministic detections, and reviewable reports.</p></div>
+              <div class="card-bottom"><span class="card-meta">Python / SQLite / CLI</span><span class="arrow-link">Source</span></div>
+            </a>
+            <a class="project-card reveal" href="https://github.com/Z3X-1337/security-header-auditor" target="_blank" rel="noopener noreferrer">
+              <div class="card-top"><span class="card-number">02 / HTTP</span><span class="tag tag--blue">Authorized use</span></div>
+              <div><h3>Security Header Auditor</h3><p>A deterministic CLI for reviewing selected HTTP headers, redirects, CSP observations, and CI quality thresholds.</p></div>
+              <div class="card-bottom"><span class="card-meta">Python / Stdlib / CI</span><span class="arrow-link">Source</span></div>
+            </a>
+            <a class="project-card reveal" href="https://github.com/Z3X-1337/toxicjoin" target="_blank" rel="noopener noreferrer">
+              <div class="card-top"><span class="card-number">03 / POLICY</span><span class="tag tag--signal">Fail closed</span></div>
+              <div><h3>ToxicJoin</h3><p>A compositional privacy gate for AI data agents that evaluates proposed SQL before execution and returns deterministic allow, rewrite, or block outcomes.</p></div>
+              <div class="card-bottom"><span class="card-meta">Python / FastAPI / DuckDB</span><span class="arrow-link">Source</span></div>
+            </a>
+            <a class="project-card reveal" href="https://github.com/Z3X-1337/rayluno" target="_blank" rel="noopener noreferrer">
+              <div class="card-top"><span class="card-number">04 / SAFETY</span><span class="tag tag--blue">Explicit approval</span></div>
+              <div><h3>Rayluno</h3><p>A local-first Arabic and English desktop assistant designed around registered skills, bounded actions, approval receipts, and verifiable local trust history.</p></div>
+              <div class="card-bottom"><span class="card-meta">Python / SQLite / Windows</span><span class="arrow-link">Source</span></div>
+            </a>
+          </div>
+          <p class="inline-actions" style="margin-top: 1.5rem"><a class="arrow-link" href="projects/">View all relevant public projects</a></p>
         </div>
-        <div class="writing-grid">
-          <a class="writing-card" data-reveal href="writing/security-headers.html">
-            <div class="card-meta"><span class="tag">Web security</span><span>04 min</span></div>
-            <h3>Security headers are control surfaces, not checkbox evidence.</h3>
-            <p>Why presence alone is a weak observation, and what redirects, error responses, and policy directives add to the review.</p>
-            <div class="card-arrow"><span>Read field note</span><span aria-hidden="true">→</span></div>
-          </a>
-          <a class="writing-card" data-reveal href="writing/authentication-telemetry.html">
-            <div class="card-meta"><span class="tag">SOC / telemetry</span><span>05 min</span></div>
-            <h3>Authentication telemetry needs context.</h3>
-            <p>Repeated failures can be a signal for review. They are not a verdict without identity, time, method, and source context.</p>
-            <div class="card-arrow"><span>Read field note</span><span aria-hidden="true">→</span></div>
-          </a>
-          <a class="writing-card" data-reveal href="writing/ioc-provenance.html">
-            <div class="card-meta"><span class="tag">Evidence handling</span><span>04 min</span></div>
-            <h3>IOC provenance is part of the finding.</h3>
-            <p>A normalized indicator is more useful when its original form, source context, and limitations travel with it.</p>
-            <div class="card-arrow"><span>Read field note</span><span aria-hidden="true">→</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" aria-labelledby="work-heading">
-      <div class="container">
-        <div class="section-heading" data-reveal>
-          <div><p class="section-label">04 / Selected work</p><h2 id="work-heading">Public repositories with a visible maturity boundary.</h2></div>
-          <p><a class="text-link" href="projects.html">Open project index →</a></p>
+      <section class="site-section" aria-labelledby="writing-title">
+        <div class="container">
+          <div class="section-header reveal">
+            <div><p class="section-index">03 / Writing</p><h2 id="writing-title">Notes that keep the uncertainty visible.</h2></div>
+            <p>Short educational field notes on controls, authorization, authentication telemetry, and indicator handling. Illustrative examples are labeled as such; they are not personal vulnerability disclosures.</p>
+          </div>
+          <div class="notes-grid">
+            <a class="note-card reveal" href="research/security-headers.html">
+              <div class="card-top"><span class="card-number">NOTE 01</span><span class="tag">Web security</span></div>
+              <div><h3>Security headers are control surfaces.</h3><p>A response header is a useful observation, not a blanket security verdict.</p></div>
+              <div class="card-bottom"><span class="card-meta">4 min read</span><span class="arrow-link">Read</span></div>
+            </a>
+            <a class="note-card reveal" href="research/server-side-authorization.html">
+              <div class="card-top"><span class="card-number">NOTE 02</span><span class="tag">Application security</span></div>
+              <div><h3>Authorization is a server-side decision.</h3><p>A hidden control or client-side flag cannot establish permission enforcement.</p></div>
+              <div class="card-bottom"><span class="card-meta">4 min read</span><span class="arrow-link">Read</span></div>
+            </a>
+            <a class="note-card reveal" href="research/authentication-telemetry.html">
+              <div class="card-top"><span class="card-number">NOTE 03</span><span class="tag">Detection engineering</span></div>
+              <div><h3>Authentication telemetry needs context.</h3><p>Signals become useful when source, method, time, and sequence stay connected.</p></div>
+              <div class="card-bottom"><span class="card-meta">5 min read</span><span class="arrow-link">Read</span></div>
+            </a>
+            <a class="note-card reveal" href="research/ioc-provenance.html">
+              <div class="card-top"><span class="card-number">NOTE 04</span><span class="tag">Evidence handling</span></div>
+              <div><h3>IOC provenance is part of the finding.</h3><p>Keep the raw source, normalized value, and analytical limits in the same record.</p></div>
+              <div class="card-bottom"><span class="card-meta">4 min read</span><span class="arrow-link">Read</span></div>
+            </a>
+          </div>
+          <p class="inline-actions" style="margin-top: 1.5rem"><a class="arrow-link" href="research/">Browse the research index</a></p>
         </div>
-        <div class="work-feature" data-reveal>
+      </section>
+
+      <section class="site-section">
+        <div class="container signal-panel reveal">
+          <div><p class="section-index">04 / Contact</p><h2>Public work, clear boundaries.</h2></div>
           <div>
-            <div class="card-meta"><span class="tag">Primary project</span><span>Python · SQLite</span></div>
-            <h3>SOC CaseForge</h3>
-            <p>A local-first workflow that connects evidence ingestion, timeline preservation, IOC extraction, deterministic findings, and analyst reporting.</p>
-            <a class="feature-link" href="https://github.com/Z3X-1337/soc-caseforge">Review repository ↗</a>
-          </div>
-          <div class="work-specs" aria-label="SOC CaseForge evidence">
-            <div class="spec-row"><span>input</span><strong>sanitized security evidence</strong></div>
-            <div class="spec-row"><span>storage</span><strong>SQLite-backed cases and normalized events</strong></div>
-            <div class="spec-row"><span>output</span><strong>Markdown / JSON reports with explainable findings</strong></div>
-            <div class="spec-row"><span>proof</span><strong>24 parser, storage, analysis, and CLI tests</strong></div>
-            <div class="spec-row"><span>next</span><strong>timestamps, adapters, dispositions, manifests</strong></div>
+            <p>The site is a project and writing surface—not a scoreboard. If you want to discuss a public repository or a relevant opportunity, use a public issue or the contact channel below. Do not send credentials, private logs, tokens, or confidential incident data.</p>
+            <p class="inline-actions" style="margin-top: 1.5rem"><a class="button" href="about/#contact">Contact channels</a><a class="button" href="https://github.com/Z3X-1337" target="_blank" rel="noopener noreferrer">GitHub profile</a></p>
           </div>
         </div>
-        <div class="project-strip">
-          <article class="project-mini" data-reveal><div class="card-meta"><span class="tag">Detection utility</span><span>12 tests</span></div><h3>Auth Log Analyzer</h3><p>OpenSSH authentication analysis with JSON and Markdown reports.</p><a href="https://github.com/Z3X-1337/auth-log-analyzer">Repository ↗</a></article>
-          <article class="project-mini" data-reveal><div class="card-meta"><span class="tag">Evidence utility</span><span>13 tests</span></div><h3>IOC Sanitizer</h3><p>Extract, validate, normalize, defang, and refang common indicators.</p><a href="https://github.com/Z3X-1337/ioc-sanitizer">Repository ↗</a></article>
-          <article class="project-mini" data-reveal><div class="card-meta"><span class="tag">Web-security utility</span><span>16 tests</span></div><h3>Security Header Auditor</h3><p>Review selected HTTP response headers and deterministic CI thresholds.</p><a href="https://github.com/Z3X-1337/security-header-auditor">Repository ↗</a></article>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="section" aria-labelledby="about-heading">
-      <div class="container about-grid">
-        <div data-reveal><p class="section-label">05 / About the desk</p><h2 id="about-heading">Useful security work should survive a second look.</h2></div>
-        <div class="about-copy" data-reveal>
-          <p>My current goal is an entry-level SOC role. I am building the technical foundation for threat hunting through log analysis, case management, detection reasoning, evidence preservation, and clear incident documentation.</p>
-          <p>The public projects are intentionally small enough to inspect. They favor deterministic behavior before enrichment, explainable outputs before severity labels, and documented limitations before broad claims.</p>
-          <p class="quote-line">scope first / preserve provenance / explain the signal / test the boundary</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container cta" aria-labelledby="cta-heading">
-      <div><p class="section-label">06 / Continue the review</p><h2 id="cta-heading">Follow the work where the proof lives.</h2></div>
-      <div><p>Code, project history, and professional contact channels are kept in the open.</p><a class="button button-primary" href="contact.html">Connect ↗</a></div>
-    </section>
-  </main>
-
-  <footer class="container site-footer"><span>© <span data-year></span> Zaid Hijazi</span><span>observe · normalize · explain · validate</span><a href="https://github.com/Z3X-1337">GitHub ↗</a></footer>
-  <script src="script.js"></script>
-</body>
+    <footer class="container footer">
+      <span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span>
+      <span class="footer-links"><a href="research/">Research</a><a href="projects/">Projects</a><a href="about/">About</a><a href="rss.xml">RSS</a></span>
+    </footer>
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A concise note on why authorization decisions belong on the service that owns the protected action or resource.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Authorization is a server-side decision — Z3X-1337">
+    <meta property="og:description" content="A hidden control or client-side flag is not access control. The service must validate actor, action, resource, and boundary.">
+    <meta property="og:url" content="https://z3x-1337.github.io/research/server-side-authorization.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://z3x-1337.github.io/research/server-side-authorization.html">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="../rss.xml">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Authorization is a server-side decision.",
+        "description": "A concise note on why authorization decisions belong on the service that owns the protected action or resource.",
+        "datePublished": "2026-08-13",
+        "dateModified": "2026-08-13",
+        "author": {"@type": "Person", "name": "Zaid Hijazi", "url": "https://github.com/Z3X-1337"},
+        "mainEntityOfPage": "https://z3x-1337.github.io/research/server-side-authorization.html"
+      }
+    </script>
+    <title>Authorization is a server-side decision — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="article-progress" aria-hidden="true"><span data-reading-progress></span></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="index.html" aria-current="page">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="article">
+      <header class="container article-hero reveal">
+        <p class="eyebrow">Note 02 / Application security</p>
+        <h1>Authorization is a server-side decision.</h1>
+        <p class="article-dek">A hidden control, client-side role check, or predictable URL does not show that an actor is allowed to do something. The service that owns the operation must decide.</p>
+        <p class="article-meta"><span>By Zaid Hijazi</span><span><time datetime="2026-08-13">13 August 2026</time></span><span>4 min read</span></p>
+      </header>
+      <div class="container article-grid">
+        <article class="article-body" data-article>
+          <p>Interfaces are designed for convenience. They show relevant actions, hide irrelevant ones, and frequently hold state in the browser. None of that should be confused with authorization. A client is controlled by the user; enforcement belongs with the service that owns a protected resource or operation.</p>
+
+          <h2 id="ui-boundary" data-section>UI is not the boundary.</h2>
+          <p>Removing an edit button can make a normal workflow clearer. It does not establish that the action is forbidden. Likewise, a client-side value such as <code>isAdmin</code> may be useful for presentation while being an unsafe basis for a service-side permission decision.</p>
+          <p>A useful design review therefore distinguishes what the interface suggests from what the service actually validates. The second question determines whether the operation is protected.</p>
+
+          <h2 id="decision-model" data-section>Name the complete decision.</h2>
+          <p>Authorization becomes easier to reason about when the relevant parts of the decision are explicit.</p>
+          <pre class="code-block" aria-label="Authorization decision model"><code><span class="code-blue">actor</span>     authenticated identity and effective role
+<span class="code-blue">action</span>    requested operation
+<span class="code-blue">resource</span>  object or record being accessed
+<span class="code-blue">boundary</span>  organization, tenant, ownership, or policy scope
+
+<span class="code-coral">allow</span> only when the service validates the complete relationship</code></pre>
+          <p>A role alone may not be enough. A user can be authorized in one organization but not another. A resource can be visible but not mutable. An adjacent read operation can be protected by a different rule than a sensitive write. Naming these relationships makes both design and review more precise.</p>
+
+          <h2 id="workflow" data-section>Model the intended workflow.</h2>
+          <p>For an authorized design review or assessment, start with the intended model: users, roles, organizations, resources, ownership, and state transitions. Then ask which service-side check protects each sensitive operation.</p>
+          <ul>
+            <li>Which identity is authenticated, and what authority is active?</li>
+            <li>Which record, operation, or state transition is requested?</li>
+            <li>Does the resource belong to the actor’s allowed organization, tenant, or ownership scope?</li>
+            <li>Does this operation require a stronger permission than viewing the surrounding data?</li>
+            <li>Is the decision made independently of browser state?</li>
+          </ul>
+          <aside class="article-callout"><p class="label">Review language</p><p>Describe the effective or missing service-side check precisely. A visible interface condition is neither proof of enforcement nor proof of a vulnerability by itself.</p></aside>
+
+          <h2 id="validation" data-section>Keep validation controlled.</h2>
+          <p>When a program explicitly authorizes testing, controlled accounts and controlled data are the appropriate way to validate a permission boundary. The aim is to prove the smallest meaningful impact necessary for a report, not to collect unrelated data or extend access beyond approved scope.</p>
+          <p>This note is a general application-security principle. It does not refer to a third-party application or claim a personal finding. Scope, evidence, and minimum-impact validation are what make research both useful and responsible.</p>
+
+          <h2 id="project-context" data-section>Where it connects to public work.</h2>
+          <p>The public repositories <a href="https://github.com/Z3X-1337/rayluno" target="_blank" rel="noopener noreferrer">Rayluno</a>, <a href="https://github.com/Z3X-1337/toxicjoin" target="_blank" rel="noopener noreferrer">ToxicJoin</a>, and <a href="https://github.com/Z3X-1337/unwritten" target="_blank" rel="noopener noreferrer">Unwritten</a> approach a related engineering concern: let natural-language systems propose, while deterministic policy, approval, and bounded execution decide what can happen.</p>
+          <section class="related-notes" aria-labelledby="related-title"><p class="eyebrow" id="related-title">Related reading</p><ul><li><a href="security-headers.html">Security headers are control surfaces.</a></li><li><a href="authentication-telemetry.html">Authentication telemetry needs context.</a></li></ul></section>
+          <nav class="article-nav" aria-label="Adjacent research notes"><a href="security-headers.html"><span>Previous</span><strong>Security headers are control surfaces.</strong></a><a href="authentication-telemetry.html"><span>Next</span><strong>Authentication telemetry needs context.</strong></a></nav>
+        </article>
+        <aside class="article-aside">
+          <p>On this page</p>
+          <nav aria-label="Table of contents"><a href="#ui-boundary" data-toc-link>UI is not the boundary</a><a href="#decision-model" data-toc-link>Name the decision</a><a href="#workflow" data-toc-link>Model the workflow</a><a href="#validation" data-toc-link>Keep validation controlled</a><a href="#project-context" data-toc-link>Project context</a></nav>
+          <div class="article-actions"><button class="copy-button" type="button" data-copy-link>Copy link</button></div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="index.html">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical note on reviewing HTTP security headers as route-specific controls rather than a pass/fail checklist.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Security headers are control surfaces — Z3X-1337">
+    <meta property="og:description" content="A response header is an observation. A useful review follows the response route, policy directives, and limits of automation.">
+    <meta property="og:url" content="https://z3x-1337.github.io/research/security-headers.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://z3x-1337.github.io/research/security-headers.html">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="../rss.xml">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Security headers are control surfaces.",
+        "description": "A practical note on reviewing HTTP security headers as route-specific controls rather than a pass/fail checklist.",
+        "datePublished": "2026-08-13",
+        "dateModified": "2026-08-13",
+        "author": {"@type": "Person", "name": "Zaid Hijazi", "url": "https://github.com/Z3X-1337"},
+        "mainEntityOfPage": "https://z3x-1337.github.io/research/security-headers.html"
+      }
+    </script>
+    <title>Security headers are control surfaces — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="article-progress" aria-hidden="true"><span data-reading-progress></span></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="index.html" aria-current="page">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="article">
+      <header class="container article-hero reveal">
+        <p class="eyebrow">Note 01 / Web security / controls</p>
+        <h1>Security headers are control surfaces.</h1>
+        <p class="article-dek">A header’s presence is one observation. A useful review follows the response route, the policy directives, and the actual question before it reaches a conclusion.</p>
+        <p class="article-meta"><span>By Zaid Hijazi</span><span><time datetime="2026-08-13">13 August 2026</time></span><span>4 min read</span></p>
+      </header>
+      <div class="container article-grid">
+        <article class="article-body" data-article>
+          <p>Security headers are often reduced to a list: present or absent. That inventory can be useful, but it is too thin to describe the security effect of a response. A better review asks which response a browser receives, where it came from, and what the policy actually says.</p>
+
+          <h2 id="presence" data-section>Presence is a starting point.</h2>
+          <p>Seeing <code>Content-Security-Policy</code>, <code>Strict-Transport-Security</code>, or <code>X-Content-Type-Options</code> is useful configuration evidence. It does not, by itself, establish that an application is protected against every relevant issue.</p>
+          <p>A Content Security Policy can exist while still permitting broad script sources, unsafe execution behavior, or a legacy allowance that needs application-specific review. The precise conclusion is not a global “secure” or “insecure” label; it is an observation about a policy received on a particular response.</p>
+
+          <h2 id="response-path" data-section>Review the response path.</h2>
+          <p>Redirects and status-specific behavior matter. A browser may request one URL, receive a redirect, then process a different final response. Login pages, error responses, and application routes can also carry different header sets.</p>
+          <pre class="code-block" aria-label="Illustrative HTTP control review output"><code><span class="code-muted">$</span> security-header-auditor https://example.test/account
+<span class="code-blue">request</span>   GET https://example.test/account
+<span class="code-blue">redirect</span>  302 → https://example.test/login
+<span class="code-blue">final</span>     200 /login
+
+<span class="code-muted">observed headers</span>
+  strict-transport-security: max-age=31536000
+  content-security-policy: default-src 'self'; object-src 'none'
+  x-content-type-options: nosniff</code></pre>
+          <p>The output above is illustrative. The review question is real: which response belongs in the report, and which route is relevant to the user’s flow? Retaining the redirect chain makes the observation more reproducible than silently treating the first response as the whole story.</p>
+
+          <h2 id="policy" data-section>Read the policy, not just the name.</h2>
+          <p>Policies are configuration. Their directives are the substance of the control. A review can preserve the exact values, distinguish unknown behavior from absent behavior, and point out where manual browser or application-context inspection remains necessary.</p>
+          <ul>
+            <li>Record the requested URL, final URL, and response status.</li>
+            <li>Keep an ordered redirect path when the request follows one.</li>
+            <li>Preserve relevant header values rather than only a boolean score.</li>
+            <li>Separate a deterministic configuration observation from an exploitability or impact claim.</li>
+          </ul>
+          <aside class="article-callout"><p class="label">Working boundary</p><p>An automated header review can document configuration evidence. It cannot independently demonstrate how every route, browser, integration, or application feature behaves.</p></aside>
+
+          <h2 id="matrix" data-section>Use a reportable observation matrix.</h2>
+          <p>A compact record can make both the useful finding and its limit clear to the next reviewer.</p>
+          <div class="table-wrap" tabindex="0" aria-label="Security header review matrix. Scroll horizontally on small screens.">
+            <table>
+              <thead><tr><th>Observed</th><th>Supports</th><th>Does not establish</th></tr></thead>
+              <tbody>
+                <tr><td>A selected header is absent from a final response.</td><td>A reproducible configuration observation for that route.</td><td>Exploitability, severity, or behavior across every route.</td></tr>
+                <tr><td>A CSP directive appears in the response.</td><td>An exact policy record suitable for targeted review.</td><td>That every feature is protected as intended.</td></tr>
+                <tr><td>A redirect reaches a different final URL.</td><td>Response context for the observed flow.</td><td>That unrelated flows share the same controls.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="project-context" data-section>Project context.</h2>
+          <p><a href="https://github.com/Z3X-1337/security-header-auditor" target="_blank" rel="noopener noreferrer">Security Header Auditor</a> is a public Python CLI for authorized targets. It starts conservatively, records redirects, reviews selected headers, produces structured output, and documents the boundaries of its CSP checks. Its purpose is to make a narrow review repeatable—not to turn a header list into an unsupported vulnerability claim.</p>
+          <section class="related-notes" aria-labelledby="related-title"><p class="eyebrow" id="related-title">Related reading</p><ul><li><a href="server-side-authorization.html">Authorization is a server-side decision.</a></li><li><a href="ioc-provenance.html">IOC provenance is part of the finding.</a></li></ul></section>
+          <nav class="article-nav" aria-label="Adjacent research notes"><a href="ioc-provenance.html"><span>Previous</span><strong>IOC provenance is part of the finding.</strong></a><a href="server-side-authorization.html"><span>Next</span><strong>Authorization is a server-side decision.</strong></a></nav>
+        </article>
+        <aside class="article-aside">
+          <p>On this page</p>
+          <nav aria-label="Table of contents"><a href="#presence" data-toc-link>Presence is a starting point</a><a href="#response-path" data-toc-link>Review the response path</a><a href="#policy" data-toc-link>Read the policy</a><a href="#matrix" data-toc-link>Observation matrix</a><a href="#project-context" data-toc-link>Project context</a></nav>
+          <div class="article-actions"><button class="copy-button" type="button" data-copy-link>Copy link</button></div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="index.html">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

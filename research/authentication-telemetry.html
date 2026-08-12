@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical note on interpreting authentication logs with the context needed for responsible security review.">
+    <meta name="theme-color" content="#0a0d11">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Authentication telemetry needs context — Z3X-1337">
+    <meta property="og:description" content="Repeated authentication failures are review signals, not standalone verdicts.">
+    <meta property="og:url" content="https://z3x-1337.github.io/research/authentication-telemetry.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://z3x-1337.github.io/research/authentication-telemetry.html">
+    <link rel="alternate" type="application/rss+xml" title="Z3X-1337 — Security Engineering Notes" href="../rss.xml">
+    <link rel="icon" href="../assets/icons/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Authentication telemetry needs context.",
+        "description": "A practical note on interpreting authentication logs with the context needed for responsible security review.",
+        "datePublished": "2026-08-13",
+        "dateModified": "2026-08-13",
+        "author": {"@type": "Person", "name": "Zaid Hijazi", "url": "https://github.com/Z3X-1337"},
+        "mainEntityOfPage": "https://z3x-1337.github.io/research/authentication-telemetry.html"
+      }
+    </script>
+    <title>Authentication telemetry needs context — Z3X-1337</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="article-progress" aria-hidden="true"><span data-reading-progress></span></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="Z3X-1337 home"><span class="brand-mark" aria-hidden="true">Z3X</span><span class="brand-copy"><strong>Z3X-1337</strong><span>security engineering</span></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>Menu</button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-menu data-open="false">
+          <a href="../index.html">Index</a><a href="index.html" aria-current="page">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../about/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="article">
+      <header class="container article-hero reveal">
+        <p class="eyebrow">Note 03 / Detection engineering</p>
+        <h1>Authentication telemetry needs context.</h1>
+        <p class="article-dek">Repeated failures are useful signals for analyst review. They only become meaningful when source, identity, method, time, and subsequent behavior remain connected.</p>
+        <p class="article-meta"><span>By Zaid Hijazi</span><span><time datetime="2026-08-13">13 August 2026</time></span><span>5 min read</span></p>
+      </header>
+      <div class="container article-grid">
+        <article class="article-body" data-article>
+          <p>Authentication logs are full of repeatable events: failed passwords, invalid user names, supported methods, successful logins, and source addresses. A parser can count them quickly. The more careful task is deciding what the count does—and does not—mean.</p>
+
+          <h2 id="signal" data-section>A signal is not a verdict.</h2>
+          <p>A burst of failures from one address can justify a review. It can also result from a user with an outdated client, a misconfigured service, shared network infrastructure, a scanner in an authorized environment, or an event that cannot be resolved from the available source alone.</p>
+          <p>Defensive tooling should keep that distinction visible. It can report the observation and the reason it crossed a configured threshold; it should not silently turn a pattern into a claim of malicious intent.</p>
+
+          <h2 id="context" data-section>Context changes the review.</h2>
+          <p>The following redacted, illustrative fragment contains a source, a sequence of attempted names, an authentication method, and a later event worth reviewing. It is not production telemetry.</p>
+          <pre class="code-block" aria-label="Illustrative authentication event sequence"><code><span class="code-muted">2026-08-13T08:14:02Z</span> <span class="code-coral">failed</span>   user=admin       source=198.51.100.42 method=password
+<span class="code-muted">2026-08-13T08:14:07Z</span> <span class="code-coral">failed</span>   user=deploy      source=198.51.100.42 method=password
+<span class="code-muted">2026-08-13T08:14:15Z</span> <span class="code-coral">failed</span>   user=backup      source=198.51.100.42 method=password
+<span class="code-muted">2026-08-13T08:21:43Z</span> <span class="code-blue">accepted</span> user=known-user  source=198.51.100.42 method=publickey</code></pre>
+          <p>The sample does not establish a conclusion. It gives a reviewer concrete questions: are the accounts expected, did the source appear elsewhere, does the successful login belong to a known identity, and what surrounding telemetry exists?</p>
+          <ul>
+            <li><strong>Source:</strong> address, network context, and whether address sharing is plausible.</li>
+            <li><strong>Identity:</strong> user names, invalid accounts, and later successful authentication.</li>
+            <li><strong>Method:</strong> password, public key, keyboard-interactive, or another supported event type.</li>
+            <li><strong>Time:</strong> event ordering and the window in which a sequence occurred.</li>
+            <li><strong>Coverage:</strong> what the parser supports and what it cannot see.</li>
+          </ul>
+
+          <h2 id="thresholds" data-section>Thresholds should stay explainable.</h2>
+          <p>Thresholds make large datasets reviewable, but they should travel with the result. If a rule reports repeated failures after a given number of events, the output should show that number. If a password-spray-style heuristic looks for multiple names from one source, the output should expose the names and count that triggered it.</p>
+          <aside class="article-callout"><p class="label">Working rule</p><p>A detection is an evidence-backed hypothesis for analyst review. Its threshold, supporting events, and limitations should remain visible in the result.</p></aside>
+
+          <h2 id="output" data-section>Output for a human reviewer.</h2>
+          <p>Structured output retains the path from raw event to reported observation. A reviewer should be able to see the source, count, affected names, event types, and explanatory rationale before deciding whether the signal needs wider investigation.</p>
+          <p><a href="https://github.com/Z3X-1337/auth-log-analyzer" target="_blank" rel="noopener noreferrer">Auth Log Analyzer</a> is a public Python CLI that produces JSON and Markdown observations from supported OpenSSH authentication events. Its purpose is to reduce the distance between raw logs and a reviewable finding—not to replace a SIEM, EDR, or human validation.</p>
+
+          <h2 id="boundaries" data-section>Make the limitation part of the result.</h2>
+          <p>Context-free thresholds can produce false positives. A log source can omit time-zone information. A mapping can assist a reviewer without proving adversary intent. These are not flaws to conceal; they are conditions the next person needs in order to interpret the output responsibly.</p>
+          <section class="related-notes" aria-labelledby="related-title"><p class="eyebrow" id="related-title">Related reading</p><ul><li><a href="ioc-provenance.html">IOC provenance is part of the finding.</a></li><li><a href="server-side-authorization.html">Authorization is a server-side decision.</a></li></ul></section>
+          <nav class="article-nav" aria-label="Adjacent research notes"><a href="server-side-authorization.html"><span>Previous</span><strong>Authorization is a server-side decision.</strong></a><a href="ioc-provenance.html"><span>Next</span><strong>IOC provenance is part of the finding.</strong></a></nav>
+        </article>
+        <aside class="article-aside">
+          <p>On this page</p>
+          <nav aria-label="Table of contents"><a href="#signal" data-toc-link>A signal is not a verdict</a><a href="#context" data-toc-link>Context changes the review</a><a href="#thresholds" data-toc-link>Explainable thresholds</a><a href="#output" data-toc-link>Output for a reviewer</a><a href="#boundaries" data-toc-link>Make limits visible</a></nav>
+          <div class="article-actions"><button class="copy-button" type="button" data-copy-link>Copy link</button></div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer"><span>© <span data-year></span> Zaid Hijazi / Z3X-1337</span><span class="footer-links"><a href="index.html">Research</a><a href="../projects/">Projects</a><a href="../about/">About</a><a href="../rss.xml">RSS</a></span></footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

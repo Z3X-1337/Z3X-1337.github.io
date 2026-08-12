@@ -1,0 +1,15 @@
+{
+  "name": "z3x-1337-security-engineering-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static GitHub Pages site for Zaid Hijazi / Z3X-1337.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/verify-site.mjs",
+    "check": "node scripts/verify-site.mjs",
+    "test": "node scripts/verify-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
